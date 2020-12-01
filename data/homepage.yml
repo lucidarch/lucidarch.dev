@@ -1,0 +1,97 @@
+####################### Banner #########################
+banner:
+  title: "lucid<br>architecture"
+  image: "images/banner.svg"
+  content: "for a scalable future of software"
+  button:
+    enable: false
+
+##################### Features ##########################
+feature:
+  enable : true
+  title : "<span style='font-family: Raleway'>not another architecture...</span>"
+  feature_item:
+
+  - name : "Clean Code"
+    icon : "ti-pulse"
+    content : "our utmost objective is to protect our code from deteriorating"
+
+  - name : "Object Oriented"
+    icon : "ti-package"
+    content : "everything is a structure that transforms to fulfill the need at hand"
+
+  - name : "Value Over Time"
+    icon : "ti-bar-chart-alt"
+    content : "build reusable code that matures with time, rather than building up technical debt"
+
+  - name : "Patterns At Heart"
+    icon : "ti-ruler-pencil"
+    content : "complement MVC with proven practices: command-bus and domain-driven design"
+
+  - name : "Robust"
+    icon : "ti-target"
+    content : "scoped testing creates predictable outcomes and reliable guarantees"
+
+  - name : "Easy Learning Curve"
+    icon : "ti-agenda"
+    content : "made to be familiar, a simple concept that extends Laravel's excellence"
+
+######################### Service #####################
+service:
+  enable : true
+  service_item:
+
+  - title: "efficient code reviews"
+    images:
+    - "images/code-review.svg"
+    content: "reduce code review time, significantly, with familiar code structure. Being familiar with the architecture at review reduces the amount of cognitive load required to make the correct decisions about coding approach, which clears up room for creative flow and consequently spend time wisely."
+    button:
+      enable: false
+
+  - title: "save onboarding time"
+    images:
+    - "images/hire.svg"
+    content: "your next hire will require significantly less time onboarding the codebase, be it familiar with Lucid or not, the detailed documentation takes care of familiarising them with the architecture and acts as a reference when needed."
+    button:
+      enable: false
+
+  - title: "painless navigation"
+    images:
+    - "images/navigation.svg"
+    content: "never get lost when finding that piece of code you remember writing somewhere or telling your colleague about. Instead, know exactly where it is.<br/><br/>working on multiple projects and switching between them couldn't get easier when navigation is the least of your problems, and upon opening the project you feel at home for there isn't much to discover besides the business logic."
+    button:
+      enable: false
+
+  - title: "elastic"
+    images:
+    - "images/elasticity.svg"
+    content: "Monolith and Micro variants cover a wide range of project verticals, whether you're working on a single-purpose, multi-purpose or microservices project. With the \"use what you need\" approach there will be no commitment to an entire stack. Choose the units that fit your case best and use them, the others will be there when needed."
+    button:
+      enable: true
+      label: "Micro • Monolith"
+      link: "https://docs.lucidarch.dev/micro-vs-monolith"
+
+  - title: "talk about code"
+    images:
+    - "images/communicate.svg"
+    content: "provides similar vocabulary when discussing code, by giving names to the units of logic that are actually used at different levels and are usually loose and scattered everywhere in our codebase.<br>Such as: domains, features, jobs, operations and services."
+    button:
+      enable: false
+
+
+################### Screenshot ########################
+screenshot:
+  enable : true
+  title : "<i class='ti-quote-left' style='font-size: x-large'></i>&nbsp;objects unfold in space,<br>capable of producing living structure&nbsp;<i class='ti-quote-right' style='font-size: x-large'></i><br> <span style='font-size: x-large'>~ Christopher Alexander</span>"
+  image : "images/unfold.svg"
+
+##################### CTA #####################
+call_to_action:
+  enable : true
+  title : "ready?"
+  image : "images/hologram.svg"
+  content : "take a look at Lucid and try it out!"
+  button:
+    enable : true
+    label : "documentation"
+    link : "https://docs.lucidarch.dev"

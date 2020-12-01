@@ -1,0 +1,187 @@
+baseURL = "https://www.lucidarch.dev"
+languageCode = "en-us"
+title = "Lucid Architecture"
+theme = "bigspring"
+enableRobotsTXT = true
+pygmentsUseClasses = true
+pygmentsCodefences = true
+
+# disableKinds = ["taxonomy", "term", "RSS"]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineAnchors = ""
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    style = "borland"
+    tabWidth = 4
+
+#################### Parameters ################################
+
+[params]
+title = "Lucid Architecture for scalable Laravel applications"
+logo = "images/logo.png"
+logo_width = "100px"
+copyright = "© Abed Halawi"
+
+# Meta data
+description = "The Lucid Architecture for scalable laravel applications"
+author = "Abed Halawi - Mulkave"
+# contact form action
+contact_form_action = "#" # contact form works with https://formspree.io
+
+footer_menu_left = "knowledge base"
+footer_menu_middle = "support"
+footer_menu_right = "legal"
+
+[params.meta]
+keywords = "lucid architecture, laravel, architecture, software engineering, software design, microservices, command bus pattern, domain driven design"
+
+[params.preloader]
+enable = false
+
+# Navigation buttons
+[params.navigation_button]
+enable = true
+label = "Get Started"
+link = "https://docs.lucidarch.dev/getting-started"
+
+############################# Social Presence ########################
+[[params.social]]
+title = "github"
+icon = "ti-github" # themify icon : https://themify.me/themify-icons
+link = "https://github.com/lucid-architecture"
+
+[[params.social]]
+title = "twitter"
+icon = "ti-twitter-alt" # themify icon : https://themify.me/themify-icons
+link = "https://twitter.com/lucid_arch"
+
+[[params.social]]
+title = "slack"
+icon = "ti-comments" # themify icon : https://themify.me/themify-icons
+link = "http://lucid-slack.herokuapp.com"
+
+
+[[params.social]]
+title = "dev.to"
+icon = "ti-book" # themify icon : https://themify.me/themify-icons
+link = "https://dev.to/lucidarch"
+
+############################# Plugins ##############################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "plugins/bootstrap/bootstrap.min.css"
+[[params.plugins.css]]
+link = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.css]]
+link = "plugins/slick/slick.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "plugins/jQuery/jquery.min.js"
+[[params.plugins.js]]
+link = "plugins/bootstrap/bootstrap.min.js"
+[[params.plugins.js]]
+link = "plugins/slick/slick.min.js"
+
+############################## Navigation ###############################
+
+# main menu
+[[menu.main]]
+name = "docs"
+URL = "https://docs.lucidarch.dev"
+weight = 1
+
+[[menu.main]]
+name = "motive"
+URL = "motive"
+weight = 2
+
+[[menu.main]]
+name = "concept"
+URL = "concept"
+weight = 3
+
+[[menu.main]]
+name = "philosophy"
+URL = "philosophy"
+weight = 4
+
+[[menu.main]]
+name = "source code"
+URL = "https://github.com/lucid-architecture/lucid"
+weight = 5
+
+
+# footer menu left
+
+[[menu.footer_left]]
+name = "blog"
+URL = "https://dev.to/lucidarch"
+weight = 1
+
+[[menu.footer_left]]
+name = "documentation"
+URL = "https://docs.lucidarch.dev"
+weight = 2
+
+[[menu.footer_left]]
+name = "micro • sample"
+URL = "https://github.com/lucid-architecture/getting-started-micro"
+weight = 3
+
+[[menu.footer_left]]
+name = "monolith • sample"
+URL = "https://github.com/lucid-architecture/getting-started-monolith"
+weight = 4
+
+
+# footer menu middle
+
+[[menu.footer_middle]]
+name = "ideas"
+URL = "https://github.com/lucid-architecture/ideas/issues"
+weight = 1
+
+[[menu.footer_middle]]
+name = "issues"
+URL = "https://github.com/lucid-architecture/lucid/issues"
+weight = 2
+
+[[menu.footer_middle]]
+name = "Slack"
+URL = "http://lucid-slack.herokuapp.com"
+weight = 3
+
+[[menu.footer_middle]]
+name = "StackOverflow"
+URL = "https://stackoverflow.com/questions/ask?tags=lucidarch"
+weight = 4
+
+# footer menu right
+
+[[menu.footer_right]]
+name = "credits"
+URL = "credits"
+weight = 1
+
+[[menu.footer_right]]
+name = "MIT license"
+URL = "https://github.com/lucid-architecture/lucid/blob/main/LICENSE"
+weight = 2
+
+[[menu.footer_right]]
+name = "code of conduct"
+URL = "https://www.contributor-covenant.org/version/1/4/code-of-conduct/"
+weight = 3
