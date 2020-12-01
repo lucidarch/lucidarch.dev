@@ -1,0 +1,130 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><title>concept</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=description content="The concept of Lucid Architecture"><meta name=author content="Abed Halawi - Mulkave"><meta name=generator content="Hugo 0.79.0"><link rel=stylesheet href=https://www.lucidarch.dev/plugins/bootstrap/bootstrap.min.css><link rel=stylesheet href=https://www.lucidarch.dev/plugins/themify-icons/themify-icons.css><link rel=stylesheet href=https://www.lucidarch.dev/plugins/slick/slick.css><link href=https://www.lucidarch.dev/scss/style.min.css rel=stylesheet media=screen><link rel="shortcut icon" href=https://www.lucidarch.dev/images/favicon.png type=image/x-icon><link rel=icon href=https://www.lucidarch.dev/images/favicon.png type=image/x-icon><meta property="og:title" content="concept"><meta property="og:description" content="The concept of Lucid Architecture"><meta property="og:type" content="website"><meta property="og:url" content="https://www.lucidarch.dev/concept/"><meta property="og:updated_time" content="2020-11-30T17:02:27+00:00"><meta property="og:site_name" content="Lucid Architecture for scalable Laravel applications"></head><body><header class=navigation><div class=container><nav class="navbar navbar-expand-lg navbar-light bg-transparent"><a class=navbar-brand href=https://www.lucidarch.dev><img width=100px class=img-fluid src=https://www.lucidarch.dev/images/logo.png alt="Lucid Architecture"></a>
+<button class="navbar-toggler border-0" type=button data-toggle=collapse data-target=#navigation>
+<i class="ti-menu h3"></i></button><div class="collapse navbar-collapse text-center" id=navigation><ul class="navbar-nav mx-auto"><li class=nav-item><a class=nav-link href=https://docs.lucidarch.dev>docs</a></li><li class=nav-item><a class=nav-link href=https://www.lucidarch.dev/motive>motive</a></li><li class=nav-item><a class=nav-link href=https://www.lucidarch.dev/concept>concept</a></li><li class=nav-item><a class=nav-link href=https://www.lucidarch.dev/philosophy>philosophy</a></li><li class=nav-item><a class=nav-link href=https://github.com/lucid-architecture/lucid>source code</a></li></ul><a href=https://docs.lucidarch.dev/getting-started class="btn btn-sm btn-primary ml-3">Get Started</a></div></nav></div></header><section class="section pb-0"><div class="container text-center"><h1 class=display-3>concept</h1></div></section><section class=section><div class=container><div class=row><div class="col-lg-10 mx-auto"><div class=content><p>this architecture did not just drop out of nowhere. It is in fact an amalgamation of best practices, design patterns and proven methods
+that we decided to incorporate at the forefront of our code.</p><p>Lucid&rsquo;s built-in patterns are <strong>Command Bus</strong> and <strong>Domain Driven Design</strong>, upon which it builds a stack of directories and units
+to organize business logic. It also derives from <strong>SOA (Service Oriented Architecture)</strong> the notion of encapsulating functionality
+within a &ldquo;service&rdquo; and enriches the concept with more than the service being a class.</p><ul><li><strong>Command Bus</strong>: to dispatch units of work. In Lucid terminology these units will be a <code>Feature</code>, <code>Job</code> or <code>Operation</code>.</li><li><strong>Domain Driven Design</strong>: to organize the units of work by categorizing them according to the topic they belong to.</li><li><strong>Service Oriented Architecture</strong>: to encapsulate and manage functionalities of the same purpose with their required resources (routes, controllers, views, datatbase migrations etc.)</li></ul><h2 id=position>position</h2><p>in a typical MVC application, Lucid will be the bond between the application&rsquo;s entrypoints and the units that do the work,
+securing code form meandring in drastic directions:</p><p><img src=/images/concept/mvc-position.png alt="Lucid MVC Position"></p><h2 id=the-stack>the stack</h2><p>at a glance&mldr;</p><p><img src=/images/concept/stack.png alt="Lucid Stack"></p><h3 id=framework>framework</h3><p>provides the &ldquo;kernel&rdquo; to do the heavy lifting of the tedious stuff such as request/response lifecycle, dependency
+injection, and other core functionalities.</p><h3 id=foundation>foundation</h3><p>extends the framework to provide higher level abstractions that are custom to the application and can be shared
+across the entire stack rather than being case-specific.</p><p>examples of what could go into foundation are:</p><ul><li><code>DateTime</code> a support class for common date and time functions</li><li><code>JsonSerializableInterface</code> that is used to identify an object to be serializable from and to JSON format</li></ul><h3 id=domains>domains</h3><p>provide separation to categorize jobs and corresponding classes that belong to the same topic. A domain operates in isolation
+from other domains and exposes its functionalities to features and operations through Lucid jobs only.</p><p>consider the structure below for an example on what a domain may look like:</p><pre><code>app/Domains/GitHub
+├── GitHubClient
+├── Jobs
+│   ├── FetchGitHubRepoInfoJob
+│   └── LoginWithGitHubJob
+├── Exceptions
+│   ├── InvalidTokenException
+│   └── RepositoryNotFoundException
+└── Tests
+    └── GitHubClientTest
+    └── Jobs
+        ├── FetchGitHubReposJobTest
+        └── LoginWithGitHubJobTest
+</code></pre><p><a href=https://docs.lucidarch.dev/domains/>documentation</a> contains more details on working with domains.</p><h3 id=services>services</h3><p>are directories rich in functionality, used to separate a <a href=https://docs.lucidarch.dev/micro-vs-monolith/#monolith>Monolith</a> into
+areas of focus in a multi-purpose application.</p><p>consider the example of an application where we enter food recipes and would want our members to have discussions in a forum,
+we would have two services: <em>1) Kitchen, 2) Forum</em> where the kitchen would manage all that&rsquo;s related to recipes, and forum is obvious:</p><pre><code>app/Services
+├── Forum
+└── Kitchen
+</code></pre><p>and following is a single service&rsquo;s structure, highlighted are the Lucid specific directories:</p><pre>
+app/Services/Forum
+├── Console
+│   └── Commands
+├── <strong>Features</strong>
+├── <strong>Operations</strong>
+├── Http
+│   ├── Controllers
+│   └── Middleware
+├── Providers
+│   ├── KitchenServiceProvider
+│   ├── BroadcastServiceProvider
+│   └── RouteServiceProvider
+├── <strong>Tests</strong>
+│   └── <strong>Features</strong>
+│   └── <strong>Operations</strong>
+├── database
+│   ├── factories
+│   ├── migrations
+│   └── seeds
+├── resources
+│   ├── lang
+│   └── views
+└── routes
+    ├── api
+    ├── channels
+    ├── console
+    └── web
+</pre><p><a href=https://docs.lucidarch.dev/services/>documentation</a> has more examples of services and their contents.</p><h3 id=features>features</h3><p>represent a human-readable application feature in a class. It contains the logic that implements the feature but with the least
+amount of detail, by running jobs from domains and operations at the application or service level.</p><p>serving the Feature class will be the only line in a controller&rsquo;s method (in MVC), consequently achieving the thinnest form of controllers.</p><div class=highlight><pre class=chroma><code class=language-php data-lang=php><span class=k>class</span> <span class=nc>AddRecipeFeature</span> <span class=k>extends</span> <span class=nx>Feature</span>
+<span class=p>{</span>
+    <span class=k>public</span> <span class=k>function</span> <span class=nf>handle</span><span class=p>(</span><span class=nx>AddRecipe</span> <span class=nv>$request</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=nv>$price</span> <span class=o>=</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>run</span><span class=p>(</span><span class=nx>CalculateRecipePriceOperation</span><span class=o>::</span><span class=na>class</span><span class=p>,</span> <span class=p>[</span>
+            <span class=s1>&#39;ingredients&#39;</span> <span class=o>=&gt;</span> <span class=nv>$request</span><span class=o>-&gt;</span><span class=na>input</span><span class=p>(</span><span class=s1>&#39;ingredients&#39;</span><span class=p>),</span>
+        <span class=p>]);</span>
+
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>run</span><span class=p>(</span><span class=nx>SaveRecipeJob</span><span class=o>::</span><span class=na>class</span><span class=p>,</span> <span class=p>[</span>
+            <span class=s1>&#39;price&#39;</span> <span class=o>=&gt;</span> <span class=nv>$price</span><span class=p>,</span>
+            <span class=s1>&#39;user&#39;</span> <span class=o>=&gt;</span> <span class=nx>Auth</span><span class=o>::</span><span class=na>user</span><span class=p>(),</span>
+            <span class=s1>&#39;title&#39;</span> <span class=o>=&gt;</span> <span class=nv>$request</span><span class=o>-&gt;</span><span class=na>input</span><span class=p>(</span><span class=s1>&#39;title&#39;</span><span class=p>),</span>
+            <span class=s1>&#39;ingredients&#39;</span> <span class=o>=&gt;</span> <span class=nv>$request</span><span class=o>-&gt;</span><span class=na>input</span><span class=p>(</span><span class=s1>&#39;ingredients&#39;</span><span class=p>),</span>
+            <span class=s1>&#39;instructions&#39;</span> <span class=o>=&gt;</span> <span class=nv>$request</span><span class=o>-&gt;</span><span class=na>input</span><span class=p>(</span><span class=s1>&#39;instructions&#39;</span><span class=p>),</span>
+        <span class=p>]);</span>
+
+        <span class=k>return</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>run</span><span class=p>(</span><span class=nx>RedirectBackJob</span><span class=o>::</span><span class=na>class</span><span class=p>);</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p><a href=https://docs.lucidarch.dev/features/>documentation</a> about features expands on how to serve them as classes from anywhere.</p><h3 id=operations>operations</h3><p>their purpose is to increase the degree of code reusability by piecing jobs together to provide composite functionalities from across domains.</p><div class=highlight><pre class=chroma><code class=language-php data-lang=php><span class=k>class</span> <span class=nc>NotifySubscribersOperation</span> <span class=k>extends</span> <span class=nx>Operation</span>
+<span class=p>{</span>
+    <span class=k>private</span> <span class=nx>int</span> <span class=nv>$authorId</span><span class=p>;</span>
+
+    <span class=k>public</span> <span class=k>function</span> <span class=fm>__construct</span><span class=p>(</span><span class=nx>int</span> <span class=nv>$authorId</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>authorId</span> <span class=o>=</span> <span class=nv>$authorId</span><span class=p>;</span>
+    <span class=p>}</span>
+
+    <span class=sd>/**
+</span><span class=sd>     * Sends notifications to subscribers.
+</span><span class=sd>     *
+</span><span class=sd>     * @return int Number of notification jobs enqueued.
+</span><span class=sd>     */</span>
+    <span class=k>public</span> <span class=k>function</span> <span class=nf>handle</span><span class=p>()</span><span class=o>:</span> <span class=nx>int</span>
+    <span class=p>{</span>
+        <span class=nv>$author</span> <span class=o>=</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>run</span><span class=p>(</span><span class=nx>GetAuthorByIDJob</span><span class=o>::</span><span class=na>class</span><span class=p>,</span> <span class=p>[</span>
+            <span class=s1>&#39;id&#39;</span> <span class=o>=&gt;</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>authorId</span><span class=p>,</span>
+        <span class=p>]);</span>
+
+        <span class=k>do</span> <span class=p>{</span>
+
+            <span class=nv>$result</span> <span class=o>=</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>run</span><span class=p>(</span><span class=nx>PaginateSubscribersJob</span><span class=o>::</span><span class=na>class</span><span class=p>,</span> <span class=p>[</span>
+                <span class=s1>&#39;authorId&#39;</span> <span class=o>=&gt;</span> <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>authorId</span><span class=p>,</span>
+            <span class=p>]);</span>
+
+            <span class=k>if</span> <span class=p>(</span><span class=nv>$result</span><span class=o>-&gt;</span><span class=na>subscribers</span><span class=o>-&gt;</span><span class=na>isNotEmpty</span><span class=p>())</span> <span class=p>{</span>
+                <span class=c1>// it&#39;s a queueable job so it will be enqueued, no waiting time
+</span><span class=c1></span>                <span class=nv>$this</span><span class=o>-&gt;</span><span class=na>run</span><span class=p>(</span><span class=nx>SendNotificationJob</span><span class=o>::</span><span class=na>class</span><span class=p>,</span> <span class=p>[</span>
+                    <span class=s1>&#39;from&#39;</span> <span class=o>=&gt;</span> <span class=nv>$author</span><span class=p>,</span>
+                    <span class=s1>&#39;to&#39;</span> <span class=o>=&gt;</span> <span class=nv>$result</span><span class=o>-&gt;</span><span class=na>subscribers</span><span class=p>,</span>
+                    <span class=s1>&#39;notification&#39;</span> <span class=o>=&gt;</span> <span class=s1>&#39;article.published&#39;</span><span class=p>,</span>
+                <span class=p>]);</span>
+            <span class=p>}</span>
+
+        <span class=p>}</span> <span class=k>while</span> <span class=p>(</span><span class=nv>$result</span><span class=o>-&gt;</span><span class=na>hasMorePages</span><span class=p>());</span>
+
+        <span class=k>return</span> <span class=nv>$result</span><span class=o>-&gt;</span><span class=na>total</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></div><p><a href=https://docs.lucidarch.dev/operations/>documentation</a> goes over this simple yet powerful concept.</p><h3 id=data>data</h3><p>for a scalable set of interconnected data elements, we&rsquo;ve created a place for them in <code>app/Data</code>,
+because most likely over time writing the application there could develop a need for more than Models in data,
+such as Repositories, Value Objects, Collections and more.</p><pre><code>app/Data
+├── Models
+├── Values
+├── Collections
+└── Repositories
+</code></pre><h2 id=benefits>benefits</h2><p>there are valuable advantages to what may seem as overengineering.</p><h3 id=i-classti-layers-stylefont-size-largeinbsporganization><i class=ti-layers style=font-size:large></i> organization</h3><ul><li>predictable impact of changes on the system when reviewing code</li><li>reduced debugging time since we’re dividing our application into isolated areas of focus (divide and conquer)</li><li>with Monolith, each of our services can have their own versioning system (e.g. Api service is at v1 while Chat is at v2.3 yet reside)
+yet reside in the same codebase</li></ul><h3 id=i-classti-loop-stylefont-size-largeinbspreuse--replace><i class=ti-loop style=font-size:large></i> reuse & replace</h3><p>by dissecting our application into small building blocks of code - a.k.a units - we&rsquo;ve instantly opened the door for a high
+degree of code sharing across the application with Data and Domains, as well as replaceability with the least amount of friction
+and technical debt.</p><h3 id=i-classti-layout-slider-stylefont-size-largeinbspboundaries><i class=ti-layout-slider style=font-size:large></i> boundaries</h3><p>by setting boundaries you would&rsquo;ve taken a step towards proetcting application code from growing unbearably large
+and made it easier for new devs to onboard. Most importantly, that you&rsquo;ve reduced technical debt to the minimum so that you don&rsquo;t
+have to pay with bugs and sleepless nights; code doesn&rsquo;t run on good intentions nor wishes.</p><h3 id=i-classti-server-stylefont-size-largeinbspmultitenancy><i class=ti-server style=font-size:large></i> multitenancy</h3><p>when our application scales we&rsquo;d typically have a bunch of instances of it running in different locations,
+at some point we would want to activate certain parts of our codebase in some areas and shut off others.</p><p>here’s a humble example of running <em>Api</em>, <em>Back Office</em> and <em>Web App</em> instances of the same application, which in Lucid terminology
+are <em>services</em> that share functionality through <em>data</em> and <em>domains</em>:</p><p><img src=/images/multitenancy.jpeg alt="Lucid multitenancy"></p></div></div></div></div></section><footer class="bg-light section pb-0"><div class=container><div class=row><div class="col-md-3 col-sm-6 mb-5"><div class="h3 mb-4">knowledge base</div><ul class="list-unstyled footer-list"><li><a href=https://dev.to/lucidarch>blog</a></li><li><a href=https://docs.lucidarch.dev>documentation</a></li><li><a href=https://github.com/lucid-architecture/getting-started-micro>micro • sample</a></li><li><a href=https://github.com/lucid-architecture/getting-started-monolith>monolith • sample</a></li></ul></div><div class="col-md-3 col-sm-6 mb-5"><div class="h3 mb-4">support</div><ul class="list-unstyled footer-list"><li><a href=https://github.com/lucid-architecture/ideas/issues>ideas</a></li><li><a href=https://github.com/lucid-architecture/lucid/issues>issues</a></li><li><a href=http://lucid-slack.herokuapp.com>Slack</a></li><li><a href="https://stackoverflow.com/questions/ask?tags=lucidarch">StackOverflow</a></li></ul></div><div class="col-md-3 col-sm-6 mb-5"><div class="h3 mb-4">legal</div><ul class="list-unstyled footer-list"><li><a href=https://www.lucidarch.dev/credits>credits</a></li><li><a href=https://github.com/lucid-architecture/lucid/blob/main/LICENSE>MIT license</a></li><li><a href=https://www.contributor-covenant.org/version/1/4/code-of-conduct/>code of conduct</a></li></ul></div><div class="col-md-3 col-sm-6 mb-5"><a class="d-block mb-3" href=https://www.lucidarch.dev><img width=100px class=img-fluid src=https://www.lucidarch.dev/images/logo.png alt="Lucid Architecture"></a><p class=mb-4></p><ul class="list-inline social-icons"><li class=list-inline-item><a href=https://github.com/lucid-architecture><i class=ti-github></i></a></li><li class=list-inline-item><a href=https://twitter.com/lucid_arch><i class=ti-twitter-alt></i></a></li><li class=list-inline-item><a href=http://lucid-slack.herokuapp.com><i class=ti-comments></i></a></li><li class=list-inline-item><a href=https://dev.to/lucidarch><i class=ti-book></i></a></li></ul></div></div><div class="border-top border-default text-center py-4 mt-4"><small class=content>© Abed Halawi</small></div></div></footer><script src=https://www.lucidarch.dev/plugins/jQuery/jquery.min.js></script><script src=https://www.lucidarch.dev/plugins/bootstrap/bootstrap.min.js></script><script src=https://www.lucidarch.dev/plugins/slick/slick.min.js></script><script src=https://www.lucidarch.dev/js/script.min.js></script></body></html>
