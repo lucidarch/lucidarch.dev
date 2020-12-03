@@ -5,8 +5,7 @@ theme = "bigspring"
 enableRobotsTXT = true
 pygmentsUseClasses = true
 pygmentsCodefences = true
-
-# disableKinds = ["taxonomy", "term", "RSS"]
+googleAnalytics = "UA-96232175-1"
 
 [markup.goldmark.renderer]
 unsafe = true
