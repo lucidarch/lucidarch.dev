@@ -1,7 +1,7 @@
 ---
 title: "Becoming One - Lucid 1.0 & The Road Ahead"
 date: 2020-12-03T21:43:32Z
-draft: true
+draft: false
 image: "images/blog/pexels-fiona-art-4300128.jpg"
 type: "featured"
 description: "Lucid v1.0 release - changelog - the road ahead"
@@ -190,7 +190,6 @@ as well as Laravel updates and upgrades will be available upon release since the
 - [Slack](https://lucid-slack.herokuapp.com) to gather around the campfire
 
 # Vision
-
 Finally, I would like to close by laying out the vision for Lucid's future.
 
 Fundamentally, Lucid is a mirror of our values; it is to express our fascination by the world of programming and our intention
