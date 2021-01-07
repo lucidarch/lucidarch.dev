@@ -94,7 +94,7 @@ app/Services/Forum
 │   ├── Controllers
 │   └── Middleware
 ├── Providers
-│   ├── KitchenServiceProvider
+│   ├── ForumServiceProvider
 │   ├── BroadcastServiceProvider
 │   └── RouteServiceProvider
 ├── <strong>Tests</strong>
@@ -218,7 +218,7 @@ there are valuable advantages to what may seem as overengineering.
 
 - predictable impact of changes on the system when reviewing code
 - reduced debugging time since we’re dividing our application into isolated areas of focus (divide and conquer)
-- with Monolith, each of our services can have their own versioning system (e.g. Api service is at v1 while Chat is at v2.3 yet reside)
+- with Monolith, each of our services can have their own versioning system (e.g. Api service is at v1 while Chat is at v2.3)
 yet reside in the same codebase
 
 ### <i class="ti-loop" style="font-size: large"></i>&nbsp;reuse & replace
@@ -229,7 +229,7 @@ and technical debt.
 
 ### <i class="ti-layout-slider" style="font-size: large"></i>&nbsp;boundaries
 
-by setting boundaries you would've taken a step towards proetcting application code from growing unbearably large
+by setting boundaries you would've taken a step towards protecting application code from growing unbearably large
 and made it easier for new devs to onboard. Most importantly, that you've reduced technical debt to the minimum so that you don't
 have to pay with bugs and sleepless nights; code doesn't run on good intentions nor wishes.
 
