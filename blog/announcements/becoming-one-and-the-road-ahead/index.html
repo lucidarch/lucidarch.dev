@@ -1,47 +1,278 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><title>Becoming One - Lucid 1.0 & The Road Ahead</title><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><meta name=description content="Lucid v1.0 release - changelog - the road ahead"><meta name=author content="Abed Halawi - Mulkave"><meta name=generator content="Hugo 0.80.0"><link rel=stylesheet href=https://lucidarch.dev/plugins/bootstrap/bootstrap.min.css><link rel=stylesheet href=https://lucidarch.dev/plugins/themify-icons/themify-icons.css><link rel=stylesheet href=https://lucidarch.dev/plugins/slick/slick.css><link href=https://lucidarch.dev/scss/style.min.css rel=stylesheet media=screen><link rel="shortcut icon" href=https://lucidarch.dev/images/favicon.png type=image/x-icon><link rel=icon href=https://lucidarch.dev/images/favicon.png type=image/x-icon><meta property="og:image" content="https://lucidarch.dev/images/blog/pexels-fiona-art-4300128.jpg"><meta property="og:title" content="Becoming One - Lucid 1.0 & The Road Ahead"><meta property="og:description" content="Lucid v1.0 release - changelog - the road ahead"><meta property="og:type" content="article"><meta property="og:url" content="https://lucidarch.dev/blog/announcements/becoming-one-and-the-road-ahead/"><meta property="article:published_time" content="2020-12-03T21:43:32+00:00"><meta property="article:modified_time" content="2020-12-03T21:43:32+00:00"><meta property="og:site_name" content="Lucid Architecture for scalable Laravel applications"><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create','UA-96232175-1','auto');ga('send','pageview');}</script><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-96232175-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body><header class=navigation><div class=container><nav class="navbar navbar-expand-lg navbar-light bg-transparent"><a class=navbar-brand href=https://lucidarch.dev><img width=100px class=img-fluid src=https://lucidarch.dev/images/logo.png alt="Lucid Architecture"></a>
+<!doctype html><html lang=en-us><head>
+<meta charset=utf-8>
+<title>Becoming One - Lucid 1.0 & The Road Ahead</title>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name=description content="Lucid v1.0 release - changelog - the road ahead">
+<meta name=author content="Abed Halawi - Mulkave">
+<meta name=generator content="Hugo 0.88.1">
+<link rel=stylesheet href=https://lucidarch.dev/plugins/bootstrap/bootstrap.min.css>
+<link rel=stylesheet href=https://lucidarch.dev/plugins/themify-icons/themify-icons.css>
+<link rel=stylesheet href=https://lucidarch.dev/plugins/slick/slick.css>
+<link href=https://lucidarch.dev/scss/style.min.css rel=stylesheet media=screen>
+<link rel="shortcut icon" href=https://lucidarch.dev/images/favicon.png type=image/x-icon>
+<link rel=icon href=https://lucidarch.dev/images/favicon.png type=image/x-icon>
+<meta property="og:image" content="https://lucidarch.dev/images/blog/pexels-fiona-art-4300128.jpg">
+<meta property="og:title" content="Becoming One - Lucid 1.0 & The Road Ahead">
+<meta property="og:description" content="Lucid v1.0 release - changelog - the road ahead">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://lucidarch.dev/blog/announcements/becoming-one-and-the-road-ahead/"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2020-12-03T21:43:32+00:00">
+<meta property="article:modified_time" content="2020-12-03T21:43:32+00:00"><meta property="og:site_name" content="Lucid Architecture for scalable Laravel applications">
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-96232175-1','auto'),ga('send','pageview'))</script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-96232175-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head><body>
+<header class=navigation>
+<div class=container>
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+<a class=navbar-brand href=https://lucidarch.dev>
+<img width=100px class=img-fluid src=https://lucidarch.dev/images/logo.png alt="Lucid Architecture">
+</a>
 <button class="navbar-toggler border-0" type=button data-toggle=collapse data-target=#navigation>
-<i class="ti-menu h3"></i></button><div class="collapse navbar-collapse text-center" id=navigation><ul class="navbar-nav mx-auto"><li class=nav-item><a class=nav-link href=https://docs.lucidarch.dev>docs</a></li><li class=nav-item><a class=nav-link href=https://lucidarch.dev/motive>motive</a></li><li class=nav-item><a class=nav-link href=https://lucidarch.dev/concept>concept</a></li><li class=nav-item><a class=nav-link href=https://lucidarch.dev/philosophy>philosophy</a></li><li class=nav-item><a class=nav-link href=https://github.com/lucid-architecture/lucid>source code</a></li></ul><a href=https://docs.lucidarch.dev/getting-started class="btn btn-sm btn-primary ml-3">Get Started</a></div></nav></div></header><section class=section><div class=container><div class=row><div class="col-lg-8 mx-auto"><img src=https://lucidarch.dev/images/blog/pexels-fiona-art-4300128.jpg alt="Becoming One - Lucid 1.0 & The Road Ahead" class="img-fluid w-100 rounded mb-4"><h2 class=mb-4>Becoming One - Lucid 1.0 & The Road Ahead</h2><div class=content><p>I cannot believe that it&rsquo;s been 4 years since the inception of Lucid into open source, it feels like yesterday.
+<i class="ti-menu h3"></i>
+</button>
+<div class="collapse navbar-collapse text-center" id=navigation>
+<ul class="navbar-nav mx-auto">
+<li class=nav-item>
+<a class=nav-link href=https://docs.lucidarch.dev>docs</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://lucidarch.dev/motive>motive</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://lucidarch.dev/concept>concept</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://lucidarch.dev/philosophy>philosophy</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://github.com/lucid-architecture/lucid>source code</a>
+</li>
+</ul>
+<a href=https://docs.lucidarch.dev/getting-started class="btn btn-sm btn-primary ml-3">Get Started</a>
+</div>
+</nav>
+</div>
+</header>
+<section class=section>
+<div class=container>
+<div class=row>
+<div class="col-lg-8 mx-auto">
+<img src=https://lucidarch.dev/images/blog/pexels-fiona-art-4300128.jpg alt="Becoming One - Lucid 1.0 & The Road Ahead" class="img-fluid w-100 rounded mb-4">
+<h2 class=mb-4>Becoming One - Lucid 1.0 & The Road Ahead</h2>
+<div class=content><p>I cannot believe that it&rsquo;s been 4 years since the inception of Lucid into open source, it feels like yesterday.
 Throughout this term we&rsquo;ve been launching Lucid • Laravel applications and the more we use it, the more we know its worth,
 especially after a long time passes and we revisit old code only to say &ldquo;wow, how would we have navigated this project if it weren&rsquo;t for this architecture?&rdquo;,
-and we said that countless times.</p><p>It is true that Lucid has been in &ldquo;unstable&rdquo; mode (version &lt; 1), only because we subconsciously knew that something somewhere needed to change, we just didn&rsquo;t know what it is until a few months back when we started re-evaluating some decisions and identified enhancements that can uplift our codebases. Nevertheless, we&rsquo;ve been in production with Lucid since 2015 and it&rsquo;s always been a great success! However, adding features, upgrading Laravel projects and versions has always been a hassle due to the fragmentation of sources:</p><ul><li><code>foundation-laravel</code> and <code>console-laravel</code> are the packages required to get Lucid</li><li>The only way to begin with a Lucid project is to clone a boilerplate from <code>lucid-architecture/laravel</code> or <code>lucid-architecture/laravel-microservice</code>,
-which isn&rsquo;t the best approach compared to requiring a composer package that fits better in the PHP ecosystem for what Lucid is offering</li></ul><p>For the TL;DR version head over to the <a href=https://github.com/lucidarch/lucid/releases/tag/v1.0.0>release Changelog</a>, or continue reading to know the story.</p><h2 id=consolidation>Consolidation</h2><p>The first step to solve this is to consolidate Lucid&rsquo;s core into a single installable package, now available at <a href=https://github.com/lucidarch/lucid>https://github.com/lucidarch/lucid</a>.</p><p>There are several advantages to a single repository:</p><ul><li>Issue tracking: One repository to report issues, ask questions and provide feedback</li><li>Support: as soon as <a href=https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions>GitHub discussions</a> are publicly available it will also be the official forum besides StackOverflow</li><li>Contribution: there will be one repo to star, watch for updates and contribute to, instead of four</li><li>Roadmap: will be also visible in a single place once published</li></ul><h2 id=package-vs-boilerplate>Package vs. Boilerplate</h2><p>As expressed previously it is favourable in the PHP ecosystem to provide such offering as a package that you can install rather than a boilerplate,
+and we said that countless times.</p>
+<p>It is true that Lucid has been in &ldquo;unstable&rdquo; mode (version &lt; 1), only because we subconsciously knew that something somewhere needed to change, we just didn&rsquo;t know what it is until a few months back when we started re-evaluating some decisions and identified enhancements that can uplift our codebases. Nevertheless, we&rsquo;ve been in production with Lucid since 2015 and it&rsquo;s always been a great success! However, adding features, upgrading Laravel projects and versions has always been a hassle due to the fragmentation of sources:</p>
+<ul>
+<li><code>foundation-laravel</code> and <code>console-laravel</code> are the packages required to get Lucid</li>
+<li>The only way to begin with a Lucid project is to clone a boilerplate from <code>lucid-architecture/laravel</code> or <code>lucid-architecture/laravel-microservice</code>,
+which isn&rsquo;t the best approach compared to requiring a composer package that fits better in the PHP ecosystem for what Lucid is offering</li>
+</ul>
+<p>For the TL;DR version head over to the <a href=https://github.com/lucidarch/lucid/releases/tag/v1.0.0>release Changelog</a>, or continue reading to know the story.</p>
+<h2 id=consolidation>Consolidation</h2>
+<p>The first step to solve this is to consolidate Lucid&rsquo;s core into a single installable package, now available at <a href=https://github.com/lucidarch/lucid>https://github.com/lucidarch/lucid</a>.</p>
+<p>There are several advantages to a single repository:</p>
+<ul>
+<li>Issue tracking: One repository to report issues, ask questions and provide feedback</li>
+<li>Support: as soon as <a href=https://github.blog/2020-05-06-new-from-satellite-2020-github-codespaces-github-discussions-securing-code-in-private-repositories-and-more/#discussions>GitHub discussions</a> are publicly available it will also be the official forum besides StackOverflow</li>
+<li>Contribution: there will be one repo to star, watch for updates and contribute to, instead of four</li>
+<li>Roadmap: will be also visible in a single place once published</li>
+</ul>
+<h2 id=package-vs-boilerplate>Package vs. Boilerplate</h2>
+<p>As expressed previously it is favourable in the PHP ecosystem to provide such offering as a package that you can install rather than a boilerplate,
 for the obvious reason that it becomes cumbersome to maintain,
-not to mention that it&rsquo;s extremely difficult to include in an existing project without having to plan a codebase migration which causes a halt in the progress that no business is willing to suffer.</p><p>On the contrary, adding a package to an existing project and gradually moving pieces is a much smoother experience, and actually a realistic one.</p><p>With the new package <code>lucidarch/lucid</code> a simple <code>composer require lucidarch/lucid</code> would suffice,
-be it new or existing, and with the new commands to initialize a variant <code>init:micro</code> and <code>init:monolith</code> it will be all that&rsquo;s required to scaffold the initial structure.</p><h3 id=supported-versions>Supported Versions</h3><p>As for supporting several versions, with a package this becomes a breeze, as of the time of this writing it is supporting
-the most recent versions are supported as per the matrix below. See <a href=https://docs.lucidarch.dev/installation/#versions--compatibility>the docs</a> for the latest compatible versions:</p><ul><li><strong>Laravel:</strong> <strong>8,</strong> <strong>7,</strong> <strong>6,</strong> <strong>5.5 (LTS)</strong></li><li><strong>PHP</strong>: <strong>8.0,</strong> <strong>7.4,</strong> <strong>7.3,</strong> <strong>7.2</strong> , <strong>7.1</strong></li></ul><h2 id=knowledge-base>Knowledge Base</h2><p><strong>Documentation</strong> is the number one proponent for a successful open source project.
+not to mention that it&rsquo;s extremely difficult to include in an existing project without having to plan a codebase migration which causes a halt in the progress that no business is willing to suffer.</p>
+<p>On the contrary, adding a package to an existing project and gradually moving pieces is a much smoother experience, and actually a realistic one.</p>
+<p>With the new package <code>lucidarch/lucid</code> a simple <code>composer require lucidarch/lucid</code> would suffice,
+be it new or existing, and with the new commands to initialize a variant <code>init:micro</code> and <code>init:monolith</code> it will be all that&rsquo;s required to scaffold the initial structure.</p>
+<h3 id=supported-versions>Supported Versions</h3>
+<p>As for supporting several versions, with a package this becomes a breeze, as of the time of this writing it is supporting
+the most recent versions are supported as per the matrix below. See <a href=https://docs.lucidarch.dev/installation/#versions--compatibility>the docs</a> for the latest compatible versions:</p>
+<ul>
+<li><strong>Laravel:</strong> <strong>8,</strong> <strong>7,</strong> <strong>6,</strong> <strong>5.5 (LTS)</strong></li>
+<li><strong>PHP</strong>: <strong>8.0,</strong> <strong>7.4,</strong> <strong>7.3,</strong> <strong>7.2</strong> , <strong>7.1</strong></li>
+</ul>
+<h2 id=knowledge-base>Knowledge Base</h2>
+<p><strong>Documentation</strong> is the number one proponent for a successful open source project.
 Up until this point, the only content has been the readme files of the corresponding repositories,
 which covers briefly what Lucid is about and how to use it, but certainly is nowhere near adequate for wide adoption.
 The folks who&rsquo;ve done it on their own (around 300 that i know of),
 I consider them heroes who were able to pick up the concept with very little information and take it from there on their own.
-And as far as I&rsquo;ve learned from their feedback, they&rsquo;ve astonishingly succeeded! If you&rsquo;re one, I salute you!</p><p>The problem is that with little information on how to go about the different cases you may encounter,
+And as far as I&rsquo;ve learned from their feedback, they&rsquo;ve astonishingly succeeded! If you&rsquo;re one, I salute you!</p>
+<p>The problem is that with little information on how to go about the different cases you may encounter,
 we left too much space for imagination in order to understand the intended message.
 Therefore, the new thorough documentation is finally in place at: <a href=https://lucidarch.dev>https://lucidarch.dev</a> and it is just the initial version.
-I&rsquo;ll be constantly adding to it the more updates and feedback come in.</p><p><strong>This blog</strong> is also a place to share content about our experience with Lucid so far and as we go,
-as well as update announcements and anything that may come in the future.</p><p>P.S. Stay tuned for the upgrade guide! Currently being finalised to make is a smooth transition of your applications to Lucid 1.0.</p><h2 id=modularity>Modularity</h2><p>Not everyone wants the same thing, there is no one-size fits all solution to our applications,
+I&rsquo;ll be constantly adding to it the more updates and feedback come in.</p>
+<p><strong>This blog</strong> is also a place to share content about our experience with Lucid so far and as we go,
+as well as update announcements and anything that may come in the future.</p>
+<p>P.S. Stay tuned for the upgrade guide! Currently being finalised to make is a smooth transition of your applications to Lucid 1.0.</p>
+<h2 id=modularity>Modularity</h2>
+<p>Not everyone wants the same thing, there is no one-size fits all solution to our applications,
 and not everyone wants it all every time for every case. So it&rsquo;s been decomposed to become modular and flexible.
 Choose whichever pieces of the puzzle that fit you best, and use them. You want Feature and Job only? no services? You got it,
 just go head and use the CLI to generate whichever unit from the stack and use it.
 Familiarity would still be there since it&rsquo;s the same units that we&rsquo;re used to, only that they might either exist as they should,
-or not exist at all. Consistency is key, and with this model it is secured as such.</p><p>This approach allows Lucid to be used in an even wider variety of applications that wouldn&rsquo;t have been possible with the boilerplates,
+or not exist at all. Consistency is key, and with this model it is secured as such.</p>
+<p>This approach allows Lucid to be used in an even wider variety of applications that wouldn&rsquo;t have been possible with the boilerplates,
 because cloning them meant a commitment to the entire stack and structure,
 while our applications require more malleability since we start small and grow gradually,
-and now the architecture will be there for you at every step in the way.</p><h2 id=cohesion>Cohesion</h2><h3 id=with-laravel>With Laravel</h3><p>At the time of inception, Laravel was at v4, and since then many improvements have been made and were adopted by Lucid (silently),
+and now the architecture will be there for you at every step in the way.</p>
+<h2 id=cohesion>Cohesion</h2>
+<h3 id=with-laravel>With Laravel</h3>
+<p>At the time of inception, Laravel was at v4, and since then many improvements have been made and were adopted by Lucid (silently),
 and the plan is to keep it coherent with Laravel&rsquo;s offering, carefully choosing features to avoid redundancy and confusion,
-concentrating on complementing it in any future decision.</p><h3 id=within>Within</h3><p>Up until v1 there&rsquo;s been a significant gap between both variants - Micro and Monolith -
+concentrating on complementing it in any future decision.</p>
+<h3 id=within>Within</h3>
+<p>Up until v1 there&rsquo;s been a significant gap between both variants - Micro and Monolith -
 specifically that Monolith files have been placed in <code>/src</code> as root and the <code>/app</code> directory has been slightly neglected.
 As for Micro, it is more in accord with Laravel&rsquo;s initial structure at the <code>/app</code> directory,
-as well as generating Lucid units that&rsquo;s been placed in different locations:</p><p><strong>Previously</strong></p><ul><li>Data: Micro <code>app/Data</code> , Monolith <code>src/Data</code></li><li>Services: Micro <code>N/A</code>, Monolith <code>src/Services</code></li><li>Domains: Micro <code>app/Domains</code> , Monolith <code>src/Domains</code></li><li>Domain Tests: Micro <code>tests/Domains/&lt;domain></code>, Monolith <code>src/Domains/&lt;domain>/Tests</code></li></ul><p>This is no longer the case. The gap between variants have been closed in favour of increased conformity and familiarity with Laravel, and will be the case moving forward.</p><p><strong>Now</strong></p><p>It will be the same for both variants:</p><ul><li>Data: <code>app/Data</code></li><li>Domains: <code>app/Domains</code></li><li>Services: <code>app/Services</code></li><li>Domain Tests: <code>app/Domains/&lt;domain>/Tests</code></li></ul><p>This increases the degree of familiarity when working on any of the variants and switching between them,
-and most importantly moving an application from one to the other barely requires any cognitive effort.</p><p><img src=/images/blog/announcements/becoming-one/mvc-position.png alt="Lucid Architecture MVC"></p><h2 id=about-previous-contributions>About Previous Contributions</h2><p>Open issues from all repositories will be transferred to the new <code>lucidarch/lucid</code> repo.</p><p>Credit goes to everyone below for contributing; waiting for you in the fresh repo!</p><h3 id=maintainers>Maintainers</h3><ul><li><a href=https://github.com/KinaneD>Kinane Domloje</a></li><li><a href=https://github.com/harris21>Harris Raftopoulos</a></li></ul><h3 id=contributors>Contributors</h3><p>A note on contribution, it is not only done through code, but also in sharing knowledge through blog posts, questions and feedback; keep them coming!</p><ul><li><a href=https://github.com/websmurf>Adam van Dongen</a></li><li><a href=https://github.com/adibhanna>Adib Hanna</a></li><li><a href=https://github.com/alexgiuvara>Alex</a></li><li><a href=https://github.com/adiachenko>Alexander Diachenko</a></li><li><a href=https://github.com/imrealashu>Ashish Singh</a></li><li><a href=https://github.com/bjdelange>Bert-Jan de Lange</a></li><li><a href=https://github.com/lezhnev74>Dmitry Lezhnev</a></li><li><a href=https://github.com/kohlerdominik>Dominik Kohler</a></li><li><a href=https://github.com/haralddoderer>Harald Doderer</a></li><li><a href=https://github.com/jbaron-mx>Jesus Baron</a></li><li><a href=https://github.com/jonasemde>Jonas Emde</a></li><li><a href=https://github.com/zeraist>Jose Marques</a></li><li><a href=https://github.com/Lazir>Lazir</a></li><li><a href=https://github.com/glorand>Lorand Gombos</a></li><li><a href=https://github.com/speccode>Maciej Czerpiński</a></li><li><a href=https://github.com/pietdevries94>Piet de Vries</a></li><li><a href=https://github.com/bart>Rene Bartkowiak</a></li><li><a href=https://github.com/rzougabenoma>rzougabenoma</a></li><li><a href=https://github.com/sharik709>Sharik Shaikh</a></li><li><a href=https://github.com/vitoo>Victorien Plancke</a></li></ul><p>I promise you that it hasn&rsquo;t been any easier to work with Lucid and add to or modify it.
+as well as generating Lucid units that&rsquo;s been placed in different locations:</p>
+<p><strong>Previously</strong></p>
+<ul>
+<li>Data: Micro <code>app/Data</code> , Monolith <code>src/Data</code></li>
+<li>Services: Micro <code>N/A</code>, Monolith <code>src/Services</code></li>
+<li>Domains: Micro <code>app/Domains</code> , Monolith <code>src/Domains</code></li>
+<li>Domain Tests: Micro <code>tests/Domains/&lt;domain></code>, Monolith <code>src/Domains/&lt;domain>/Tests</code></li>
+</ul>
+<p>This is no longer the case. The gap between variants have been closed in favour of increased conformity and familiarity with Laravel, and will be the case moving forward.</p>
+<p><strong>Now</strong></p>
+<p>It will be the same for both variants:</p>
+<ul>
+<li>Data: <code>app/Data</code></li>
+<li>Domains: <code>app/Domains</code></li>
+<li>Services: <code>app/Services</code></li>
+<li>Domain Tests: <code>app/Domains/&lt;domain>/Tests</code></li>
+</ul>
+<p>This increases the degree of familiarity when working on any of the variants and switching between them,
+and most importantly moving an application from one to the other barely requires any cognitive effort.</p>
+<p><img src=/images/blog/announcements/becoming-one/mvc-position.png alt="Lucid Architecture MVC"></p>
+<h2 id=about-previous-contributions>About Previous Contributions</h2>
+<p>Open issues from all repositories will be transferred to the new <code>lucidarch/lucid</code> repo.</p>
+<p>Credit goes to everyone below for contributing; waiting for you in the fresh repo!</p>
+<h3 id=maintainers>Maintainers</h3>
+<ul>
+<li><a href=https://github.com/KinaneD>Kinane Domloje</a></li>
+<li><a href=https://github.com/harris21>Harris Raftopoulos</a></li>
+</ul>
+<h3 id=contributors>Contributors</h3>
+<p>A note on contribution, it is not only done through code, but also in sharing knowledge through blog posts, questions and feedback; keep them coming!</p>
+<ul>
+<li><a href=https://github.com/websmurf>Adam van Dongen</a></li>
+<li><a href=https://github.com/adibhanna>Adib Hanna</a></li>
+<li><a href=https://github.com/alexgiuvara>Alex</a></li>
+<li><a href=https://github.com/adiachenko>Alexander Diachenko</a></li>
+<li><a href=https://github.com/imrealashu>Ashish Singh</a></li>
+<li><a href=https://github.com/bjdelange>Bert-Jan de Lange</a></li>
+<li><a href=https://github.com/lezhnev74>Dmitry Lezhnev</a></li>
+<li><a href=https://github.com/kohlerdominik>Dominik Kohler</a></li>
+<li><a href=https://github.com/haralddoderer>Harald Doderer</a></li>
+<li><a href=https://github.com/jbaron-mx>Jesus Baron</a></li>
+<li><a href=https://github.com/jonasemde>Jonas Emde</a></li>
+<li><a href=https://github.com/zeraist>Jose Marques</a></li>
+<li><a href=https://github.com/Lazir>Lazir</a></li>
+<li><a href=https://github.com/glorand>Lorand Gombos</a></li>
+<li><a href=https://github.com/speccode>Maciej Czerpiński</a></li>
+<li><a href=https://github.com/pietdevries94>Piet de Vries</a></li>
+<li><a href=https://github.com/bart>Rene Bartkowiak</a></li>
+<li><a href=https://github.com/rzougabenoma>rzougabenoma</a></li>
+<li><a href=https://github.com/sharik709>Sharik Shaikh</a></li>
+<li><a href=https://github.com/vitoo>Victorien Plancke</a></li>
+</ul>
+<p>I promise you that it hasn&rsquo;t been any easier to work with Lucid and add to or modify it.
 Local setup is extremely simple and there&rsquo;s a CI setup to ensure backward compatibility according to the supported version matrix.
 In addition to the fact that there will be no confusing branching model in several repositories to deal with,
-just a single repository with its release versions. How relieving!</p><h2 id=identity--branding>Identity & Branding</h2><p>Notice the change in the org username on GitHub, renamed <code>lucid-architecture</code> to <code>lucidarch</code>.
+just a single repository with its release versions. How relieving!</p>
+<h2 id=identity--branding>Identity & Branding</h2>
+<p>Notice the change in the org username on GitHub, renamed <code>lucid-architecture</code> to <code>lucidarch</code>.
 This change is an identity change to the alias of Lucid Architecture - lucidarch -
 where moving forward Lucid&rsquo;s online presence will be (where available) as such &ldquo;{platform}/lucidarch&rdquo;
-(except for Twitter because it&rsquo;s already taken so there&rsquo;s <code>lucid_arch</code> now).</p><p>The choice for the alias was straight forward - Lucid Arch - short for architecture, also resembles arches
-which in architecture are used to <strong>span an opening and to support loads from above.</strong> Call it a great coincidence, but it also aligns with Lucid&rsquo;s objective.</p><h2 id=the-road-ahead>The Road Ahead</h2><ul><li>Frequent updates: With a single repository it is easier to contribute and thus easier to adopt and provide new releases</li><li>New Laravel features that make sense to have their Lucid counterpart will do so almost instantly,
-as well as Laravel updates and upgrades will be available upon release since there will be no boilerplate to prepare</li><li>Enriching the knowledge base will be the utmost priority to try and spread the word about our experience</li><li>Stay tuned for the upgrade guide so that you can transition your existing applications and leverage upcoming updates</li></ul><h2 id=communication-channels-to-tune-in-to>Communication Channels To Tune In To</h2><ul><li><a href=https://github.com/lucidarch/lucid/releases>Releases on GitHub</a></li><li>Progress and announcements:<ul><li><a href=https://twitter.com/lucid_arch>Lucid on Twitter</a> & my personal account <a href=https://twitter.com/mulkave>mulkave</a></li><li><a href=https://reddit.com/r/lucidarch>Reddit</a> in addition to cross posts of interesting content from similar communities</li></ul></li><li><a href=https://dev.to/lucidarch>dev.to/lucidarch</a> for knowledge sharing</li><li><a href=https://lucid-slack.herokuapp.com>Slack</a> to gather around the campfire</li></ul><h1 id=vision>Vision</h1><p>Finally, I would like to close by laying out the vision for Lucid&rsquo;s future.</p><p>Fundamentally, Lucid is a mirror of our values; it is to express our fascination by the world of programming and our intention
+(except for Twitter because it&rsquo;s already taken so there&rsquo;s <code>lucid_arch</code> now).</p>
+<p>The choice for the alias was straight forward - Lucid Arch - short for architecture, also resembles arches
+which in architecture are used to <strong>span an opening and to support loads from above.</strong> Call it a great coincidence, but it also aligns with Lucid&rsquo;s objective.</p>
+<h2 id=the-road-ahead>The Road Ahead</h2>
+<ul>
+<li>Frequent updates: With a single repository it is easier to contribute and thus easier to adopt and provide new releases</li>
+<li>New Laravel features that make sense to have their Lucid counterpart will do so almost instantly,
+as well as Laravel updates and upgrades will be available upon release since there will be no boilerplate to prepare</li>
+<li>Enriching the knowledge base will be the utmost priority to try and spread the word about our experience</li>
+<li>Stay tuned for the upgrade guide so that you can transition your existing applications and leverage upcoming updates</li>
+</ul>
+<h2 id=communication-channels-to-tune-in-to>Communication Channels To Tune In To</h2>
+<ul>
+<li><a href=https://github.com/lucidarch/lucid/releases>Releases on GitHub</a></li>
+<li>Progress and announcements:
+<ul>
+<li><a href=https://twitter.com/lucid_arch>Lucid on Twitter</a> & my personal account <a href=https://twitter.com/mulkave>mulkave</a></li>
+<li><a href=https://reddit.com/r/lucidarch>Reddit</a> in addition to cross posts of interesting content from similar communities</li>
+</ul>
+</li>
+<li><a href=https://dev.to/lucidarch>dev.to/lucidarch</a> for knowledge sharing</li>
+<li><a href=https://lucid-slack.herokuapp.com>Slack</a> to gather around the campfire</li>
+</ul>
+<h1 id=vision>Vision</h1>
+<p>Finally, I would like to close by laying out the vision for Lucid&rsquo;s future.</p>
+<p>Fundamentally, Lucid is a mirror of our values; it is to express our fascination by the world of programming and our intention
 to contribute parts that can be assembled to create a living structure.
 Like seeds turning into a plant, expands from within and gradually complicates itself yet sustains an elegent shape that guides our understanding
-and requires the least amount of cognitive effort to comprehend.</p><p>The ability to share Lucid code in a &ldquo;pluggable&rdquo; way is also in the horizon, because there is so much of what we do that&rsquo;s already been done
+and requires the least amount of cognitive effort to comprehend.</p>
+<p>The ability to share Lucid code in a &ldquo;pluggable&rdquo; way is also in the horizon, because there is so much of what we do that&rsquo;s already been done
 and we&rsquo;re also working on similar things at the same time, being able to grab a functionality that you&rsquo;re familiar with its structure
-and API effortlessly would make it even easier and faster to assemble.</p><p>Most importantly, remember to enjoy the journey!</p></div></div></div></div></section><footer class="bg-light section pb-0"><div class=container><div class=row><div class="col-md-3 col-sm-6 mb-5"><div class="h3 mb-4">knowledge base</div><ul class="list-unstyled footer-list"><li><a href=https://dev.to/lucidarch>blog</a></li><li><a href=https://docs.lucidarch.dev>documentation</a></li><li><a href=https://github.com/lucid-architecture/getting-started-micro>micro • sample</a></li><li><a href=https://github.com/lucid-architecture/getting-started-monolith>monolith • sample</a></li></ul></div><div class="col-md-3 col-sm-6 mb-5"><div class="h3 mb-4">support</div><ul class="list-unstyled footer-list"><li><a href=https://github.com/lucid-architecture/ideas/issues>ideas</a></li><li><a href=https://github.com/lucid-architecture/lucid/issues>issues</a></li><li><a href=http://lucid-slack.herokuapp.com>Slack</a></li><li><a href="https://stackoverflow.com/questions/ask?tags=lucidarch">StackOverflow</a></li></ul></div><div class="col-md-3 col-sm-6 mb-5"><div class="h3 mb-4">legal</div><ul class="list-unstyled footer-list"><li><a href=https://lucidarch.dev/credits>credits</a></li><li><a href=https://github.com/lucid-architecture/lucid/blob/main/LICENSE>MIT license</a></li><li><a href=https://www.contributor-covenant.org/version/1/4/code-of-conduct/>code of conduct</a></li></ul></div><div class="col-md-3 col-sm-6 mb-5"><a class="d-block mb-3" href=https://lucidarch.dev><img width=100px class=img-fluid src=https://lucidarch.dev/images/logo.png alt="Lucid Architecture"></a><p class=mb-4></p><ul class="list-inline social-icons"><li class=list-inline-item><a href=https://github.com/lucid-architecture><i class=ti-github></i></a></li><li class=list-inline-item><a href=https://twitter.com/lucid_arch><i class=ti-twitter-alt></i></a></li><li class=list-inline-item><a href=http://lucid-slack.herokuapp.com><i class=ti-comments></i></a></li><li class=list-inline-item><a href=https://dev.to/lucidarch><i class=ti-book></i></a></li></ul></div></div><div class="border-top border-default text-center py-4 mt-4"><small class=content>© Abed Halawi</small></div></div></footer><script src=https://lucidarch.dev/plugins/jQuery/jquery.min.js></script><script src=https://lucidarch.dev/plugins/bootstrap/bootstrap.min.js></script><script src=https://lucidarch.dev/plugins/slick/slick.min.js></script><script src=https://lucidarch.dev/js/script.min.js></script></body></html>
+and API effortlessly would make it even easier and faster to assemble.</p>
+<p>Most importantly, remember to enjoy the journey!</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-light section pb-0">
+<div class=container>
+<div class=row>
+<div class="col-md-3 col-sm-6 mb-5">
+<div class="h3 mb-4">knowledge base</div>
+<ul class="list-unstyled footer-list">
+<li><a href=https://dev.to/lucidarch>blog</a></li>
+<li><a href=https://docs.lucidarch.dev>documentation</a></li>
+<li><a href=https://github.com/lucid-architecture/getting-started-micro>micro • sample</a></li>
+<li><a href=https://github.com/lucid-architecture/getting-started-monolith>monolith • sample</a></li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-6 mb-5">
+<div class="h3 mb-4">support</div>
+<ul class="list-unstyled footer-list">
+<li><a href=https://github.com/lucid-architecture/ideas/issues>ideas</a></li>
+<li><a href=https://github.com/lucid-architecture/lucid/issues>issues</a></li>
+<li><a href=http://lucid-slack.herokuapp.com>Slack</a></li>
+<li><a href="https://stackoverflow.com/questions/ask?tags=lucidarch">StackOverflow</a></li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-6 mb-5">
+<div class="h3 mb-4">legal</div>
+<ul class="list-unstyled footer-list">
+<li><a href=https://lucidarch.dev/credits>credits</a></li>
+<li><a href=https://github.com/lucid-architecture/lucid/blob/main/LICENSE>MIT license</a></li>
+<li><a href=https://www.contributor-covenant.org/version/1/4/code-of-conduct/>code of conduct</a></li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-6 mb-5">
+<a class="d-block mb-3" href=https://lucidarch.dev><img width=100px class=img-fluid src=https://lucidarch.dev/images/logo.png alt="Lucid Architecture"></a>
+<p class=mb-4></p>
+<ul class="list-inline social-icons">
+<li class=list-inline-item><a href=https://github.com/lucid-architecture><i class=ti-github></i></a></li>
+<li class=list-inline-item><a href=https://twitter.com/lucid_arch><i class=ti-twitter-alt></i></a></li>
+<li class=list-inline-item><a href=http://lucid-slack.herokuapp.com><i class=ti-comments></i></a></li>
+<li class=list-inline-item><a href=https://dev.to/lucidarch><i class=ti-book></i></a></li>
+</ul>
+</div>
+</div>
+<div class="border-top border-default text-center py-4 mt-4">
+<small class=content>© Abed Halawi</small>
+</div>
+</div>
+</footer>
+<script src=https://lucidarch.dev/plugins/jQuery/jquery.min.js></script>
+<script src=https://lucidarch.dev/plugins/bootstrap/bootstrap.min.js></script>
+<script src=https://lucidarch.dev/plugins/slick/slick.min.js></script>
+<script src=https://lucidarch.dev/js/script.min.js></script></body>
+</html>
