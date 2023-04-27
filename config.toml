@@ -58,7 +58,7 @@ link = "https://docs.lucidarch.dev/getting-started"
 [[params.social]]
 title = "github"
 icon = "ti-github" # themify icon : https://themify.me/themify-icons
-link = "https://github.com/lucid-architecture"
+link = "https://github.com/lucidarch"
 
 [[params.social]]
 title = "twitter"
@@ -119,7 +119,7 @@ weight = 4
 
 [[menu.main]]
 name = "source code"
-URL = "https://github.com/lucid-architecture/lucid"
+URL = "https://github.com/lucidarch/lucid"
 weight = 5
 
 
@@ -137,12 +137,12 @@ weight = 2
 
 [[menu.footer_left]]
 name = "micro • sample"
-URL = "https://github.com/lucid-architecture/getting-started-micro"
+URL = "https://github.com/lucidarch/getting-started-micro"
 weight = 3
 
 [[menu.footer_left]]
 name = "monolith • sample"
-URL = "https://github.com/lucid-architecture/getting-started-monolith"
+URL = "https://github.com/lucidarch/getting-started-monolith"
 weight = 4
 
 
@@ -150,12 +150,12 @@ weight = 4
 
 [[menu.footer_middle]]
 name = "ideas"
-URL = "https://github.com/lucid-architecture/ideas/issues"
+URL = "https://github.com/lucidarch/ideas/issues"
 weight = 1
 
 [[menu.footer_middle]]
 name = "issues"
-URL = "https://github.com/lucid-architecture/lucid/issues"
+URL = "https://github.com/lucidarch/lucid/issues"
 weight = 2
 
 [[menu.footer_middle]]
@@ -177,7 +177,7 @@ weight = 1
 
 [[menu.footer_right]]
 name = "MIT license"
-URL = "https://github.com/lucid-architecture/lucid/blob/main/LICENSE"
+URL = "https://github.com/lucidarch/lucid/blob/main/LICENSE"
 weight = 2
 
 [[menu.footer_right]]
