@@ -45,7 +45,7 @@ be it new or existing, and with the new commands to initialize a variant `init:m
 ### Supported Versions
 
 As for supporting several versions, with a package this becomes a breeze, as of the time of this writing  it is supporting
-the most recent versions are supported as per the matrix below. See [the docs](https://docs.lucidarch.dev/installation/#versions--compatibility) for the latest compatible versions:
+the most recent versions are supported as per the matrix below. See [the docs](https://docs.lucidarch.site/installation/#versions--compatibility) for the latest compatible versions:
 
 - **Laravel:** **8,** **7,** **6,** **5.5 (LTS)**
 - **PHP**: **8.0,** **7.4,** **7.3,** **7.2** , **7.1**
@@ -61,7 +61,7 @@ And as far as I've learned from their feedback, they've astonishingly succeeded!
 
 The problem is that with little information on how to go about the different cases you may encounter,
 we left too much space for imagination in order to understand the intended message.
-Therefore, the new thorough documentation is finally in place at: [https://lucidarch.dev](https://lucidarch.dev) and it is just the initial version.
+Therefore, the new thorough documentation is finally in place at: [https://lucidarch.site](https://lucidarch.site) and it is just the initial version.
 I'll be constantly adding to it the more updates and feedback come in.
 
 **This blog** is also a place to share content about our experience with Lucid so far and as we go,

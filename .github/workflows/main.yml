@@ -17,6 +17,6 @@ jobs:
         with:
           githubToken: ${{ secrets.PERSONAL_TOKEN }}
           branch: public
-          cname: lucidarch.dev
+          cname: lucidarch.site
 
 

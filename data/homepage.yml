@@ -69,7 +69,7 @@ service:
     button:
       enable: true
       label: "Micro • Monolith"
-      link: "https://docs.lucidarch.dev/micro-vs-monolith"
+      link: "https://docs.lucidarch.site/micro-vs-monolith"
 
   - title: "talk about code"
     images:
@@ -94,4 +94,4 @@ call_to_action:
   button:
     enable : true
     label : "documentation"
-    link : "https://docs.lucidarch.dev"
+    link : "https://docs.lucidarch.site"

@@ -66,11 +66,11 @@ app/Domains/GitHub
         └── LoginWithGitHubJobTest
 ```
 
-[documentation](https://docs.lucidarch.dev/domains/) contains more details on working with domains.
+[documentation](https://docs.lucidarch.site/domains/) contains more details on working with domains.
 
 ### services
 
-are directories rich in functionality, used to separate a [Monolith](https://docs.lucidarch.dev/micro-vs-monolith/#monolith) into
+are directories rich in functionality, used to separate a [Monolith](https://docs.lucidarch.site/micro-vs-monolith/#monolith) into
 areas of focus in a multi-purpose application.
 
 consider the example of an application where we enter food recipes and would want our members to have discussions in a forum,
@@ -114,7 +114,7 @@ app/Services/Forum
     └── web
 </pre>
 
-[documentation](https://docs.lucidarch.dev/services/) has more examples of services and their contents.
+[documentation](https://docs.lucidarch.site/services/) has more examples of services and their contents.
 
 ### features
 
@@ -145,7 +145,7 @@ class AddRecipeFeature extends Feature
 }
 ```
 
-[documentation](https://docs.lucidarch.dev/features/) about features expands on how to serve them as classes from anywhere.
+[documentation](https://docs.lucidarch.site/features/) about features expands on how to serve them as classes from anywhere.
 
 ### operations
 
@@ -194,7 +194,7 @@ class NotifySubscribersOperation extends Operation
 }
 ```
 
-[documentation](https://docs.lucidarch.dev/operations/) goes over this simple yet powerful concept.
+[documentation](https://docs.lucidarch.site/operations/) goes over this simple yet powerful concept.
 
 ### data
 
