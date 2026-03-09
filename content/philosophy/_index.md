@@ -25,36 +25,3 @@ simply put:
 
 "expressed clearly; easy to understand" marks the fundamental objective that the architecture intends to achieve in code.
 {{% figure alt="Lucid Name Definition" src="/images/name-definition.png" %}}
-
-## emblem
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-        <img src="/images/icon-simple-coloured.png" alt="Lucid Icon" />
-    </div>
-    <div class="col-sm">
-        <img src="/images/compass-rose.png" alt="Lucid compass rose" />
-    </div>
-  </div>
-</div>
-
-### foundation
-
-the more you look at it, the more different shapes you will see. Some of these shapes may seem like a building or a block and they go in different directions. However, they are all starting from the same center - *The Foundation*.
-
-### resilience
-
-from it emerges lines that have equal height, though go in different directions but have similar characteristics - representing the malleability of Lucid. Though, without guidelines and principles the outcome will not be desirable. Hence the straight lines that go in one and only one direction, representing the responsibility of each component in our code regardless of its destination.
-
-### direction
-
-the compass was an inspiration to the logo - without it we will surely get lost. Not knowing where we are, in which direction to go and how to go there is even worse. However, if we've been down the same road before it will be easier to know what should  happen next.
-
-like a compass, Lucid provides the guidance and acts as a reliable companion to your code navigation journey.
-
-also, a compass has no final destination and is only there to lead us wherever we wish to go, similar to any project that is ever evolving but the compass will never change direction.
-
-### clarity
-
-from darkness to light. The dark end of the logo represents the chaos that our projects end up having after a long period of work and re-work, the variety of features they contain along with their changes. Going through the foundation (the center) - in this case Lucid - our projects go out of the other side in light - clear, understandable and easy to work with.

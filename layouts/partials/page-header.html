@@ -1,0 +1,8 @@
+<div class="l-page-hdr">
+  <div class="l-page-hdr-inner">
+    <h1 class="l-page-title">{{ .Title | markdownify }}</h1>
+    {{ with .Params.subtitle }}
+    <p class="l-page-subtitle">{{ . | markdownify }}</p>
+    {{ end }}
+  </div>
+</div>

@@ -50,7 +50,7 @@ from other domains and exposes its functionalities to features and operations th
 
 consider the structure below for an example on what a domain may look like:
 
-```
+<pre>
 app/Domains/GitHub
 ├── GitHubClient
 ├── Jobs
@@ -64,7 +64,7 @@ app/Domains/GitHub
     └── Jobs
         ├── FetchGitHubReposJobTest
         └── LoginWithGitHubJobTest
-```
+</pre>
 
 [documentation](https://docs.lucidarch.site/domains/) contains more details on working with domains.
 
@@ -76,11 +76,11 @@ areas of focus in a multi-purpose application.
 consider the example of an application where we enter food recipes and would want our members to have discussions in a forum,
 we would have two services: *1) Kitchen, 2) Forum* where the kitchen would manage all that's related to recipes, and forum is obvious:
 
-```
+<pre>
 app/Services
 ├── Forum
 └── Kitchen
-```
+</pre>
 
 and following is a single service's structure, highlighted are the Lucid specific directories:
 

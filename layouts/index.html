@@ -1,0 +1,1049 @@
+{{ define "body_class" }}home{{ end }}
+
+{{ define "main" }}
+<style>
+/* ═══════════════════════════════════════════════════
+   LUCID HOMEPAGE — self-contained design system
+   All classes prefixed with l- / lhero- / lc- to
+   avoid Bootstrap collision.
+═══════════════════════════════════════════════════ */
+:root {
+  --lc-light:   #F49AC2;
+  --lc-mid:     #B84DFF;
+  --lc-primary: #7C3AED;
+  --lc-dark:    #4C1D95;
+  --lc-deep:    #2E1065;
+  --lc-bg:      #0B0B12;
+  --lc-bg2:     #0E0E18;
+  --lc-bg3:     #12121C;
+  --lc-text:    #FFFFFF;
+  --lc-muted:   rgba(255,255,255,0.70);
+  --lc-faint:   rgba(255,255,255,0.40);
+  --lc-border:  rgba(255,255,255,0.10);
+  --lc-panel:   rgba(255,255,255,0.04);
+  --lc-grad:    linear-gradient(135deg, #F49AC2, #B84DFF 30%, #7C3AED 65%, #2E1065);
+}
+
+/* ── RESET for homepage wrapper ── */
+.l-home * { box-sizing: border-box; }
+.l-home { font-family: "Space Grotesk", Inter, system-ui, sans-serif !important; background: var(--lc-bg); color: var(--lc-text); overflow-x: hidden; }
+.l-home h1, .l-home h2, .l-home h3, .l-home h4,
+.l-home p, .l-home a, .l-home span, .l-home div,
+.l-home li, .l-home label { font-family: "Space Grotesk", Inter, system-ui, sans-serif !important; }
+.l-home pre, .l-home code { font-family: "JetBrains Mono", "Fira Code", monospace !important; }
+.l-home a:hover { color: inherit; }
+
+/* ════════════════════════════════
+   NAV
+════════════════════════════════ */
+.l-nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--lc-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(11,11,18,0.65);
+}
+.l-nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.l-nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.l-nav-logo-text {
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+.l-nav-logo-text span {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  color: #B84DFF;
+  text-transform: none;
+  margin-top: 3px;
+}
+.l-nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0; padding: 0;
+  gap: 2px;
+  flex: 1;
+}
+.l-nav-links li a {
+  display: block;
+  padding: 7px 13px;
+  font-size: 14px;
+  color: var(--lc-muted);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: color .15s, background .15s;
+  font-weight: 400;
+}
+.l-nav-links li a:hover { color: #fff; background: rgba(255,255,255,0.07); }
+.l-nav-cta {
+  flex-shrink: 0;
+  padding: 9px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--lc-mid), var(--lc-primary));
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(124,58,237,0.38);
+  transition: opacity .2s, transform .2s;
+}
+.l-nav-cta:hover { opacity: .88; transform: translateY(-1px); color: #fff; }
+@media (max-width: 860px) { .l-nav-links { display: none; } }
+@media (max-width: 480px) { .l-nav { padding: 0 18px; } }
+
+/* ════════════════════════════════
+   HERO
+════════════════════════════════ */
+.lhero {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 110px 32px 72px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(184,77,255,0.16), transparent 34%),
+    radial-gradient(circle at 82% 28%, rgba(124,58,237,0.15), transparent 30%),
+    linear-gradient(180deg, #11111c 0%, var(--lc-bg) 100%);
+}
+.lhero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 40%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 30%, transparent 80%);
+  opacity: .55;
+  pointer-events: none;
+}
+.lhero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .13;
+  pointer-events: none;
+  animation: l-float 11s ease-in-out infinite alternate;
+}
+.lhero-orb.one { width: 48rem; height: 48rem; top: -12rem; right: -10rem; background: radial-gradient(circle, var(--lc-mid), transparent 65%); }
+.lhero-orb.two { width: 38rem; height: 38rem; bottom: -12rem; left: -10rem; background: radial-gradient(circle, var(--lc-primary), transparent 65%); animation-duration: 14s; }
+
+.lhero-content {
+  position: relative; z-index: 2;
+  width: min(1200px, 100%);
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 56px;
+  align-items: center;
+}
+.l-eyebrow {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid var(--lc-border);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  color: var(--lc-muted);
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
+  backdrop-filter: blur(8px);
+}
+.l-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--lc-light), var(--lc-mid));
+  box-shadow: 0 0 10px rgba(184,77,255,0.75);
+  flex-shrink: 0;
+}
+.lhero-h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 6.5vw, 5.6rem);
+  line-height: .94;
+  letter-spacing: -0.045em;
+  font-weight: 300;
+  color: #fff;
+}
+.lhero-accent {
+  background: var(--lc-grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.lhero-sub {
+  margin: 22px 0 0;
+  max-width: 50rem;
+  color: var(--lc-muted);
+  font-size: clamp(1rem, 1.9vw, 1.16rem);
+  line-height: 1.74;
+  font-weight: 400;
+}
+.lhero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.l-btn {
+  border-radius: 999px;
+  padding: 13px 26px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform .2s, opacity .2s, box-shadow .2s;
+  border: 1px solid transparent;
+  letter-spacing: -0.01em;
+}
+.l-btn:hover { transform: translateY(-2px); }
+.l-btn-primary {
+  background: linear-gradient(135deg, var(--lc-mid), var(--lc-primary));
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(124,58,237,0.42);
+}
+.l-btn-primary:hover { color: #fff; box-shadow: 0 14px 36px rgba(124,58,237,0.55); }
+.l-btn-secondary {
+  border-color: var(--lc-border);
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+}
+.l-btn-secondary:hover { color: #fff; background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.2); }
+
+.lhero-units {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 34px;
+}
+.lhero-unit {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--lc-faint);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+}
+.lhero-unit-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--lc-mid);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* ── HERO VISUAL PANEL ── */
+.lhero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 580px;
+}
+.l-panel {
+  position: relative;
+  width: min(540px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 30px;
+  background: linear-gradient(160deg, rgba(255,255,255,0.075), rgba(255,255,255,0.02));
+  border: 1px solid var(--lc-border);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 48px 96px rgba(0,0,0,0.52), inset 0 1px 0 rgba(255,255,255,0.07);
+  overflow: hidden;
+}
+.l-panel::before {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+.l-logo-stage {
+  position: absolute; inset: 0;
+  display: grid;
+  place-items: center;
+}
+/* ── UPSCALED LOGO GRID (1.38× from original 292px) ── */
+.l-logo-grid {
+  position: relative;
+  width: 404px;
+  height: 404px;
+  transform: translateY(-8px);
+}
+.l-tile {
+  position: absolute;
+  border-radius: 24px;
+  background: var(--lc-grad);
+  box-shadow:
+    0 16px 40px rgba(124,58,237,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.22);
+  opacity: 0;
+  transform: translateY(26px) scale(.92);
+  animation: l-assemble 1s cubic-bezier(.2,.7,.2,1) forwards;
+}
+.l-tile::after {
+  content: "";
+  position: absolute; inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.11);
+  pointer-events: none;
+}
+/* tile positions — pitch = 144px, tile = 116px, gap = 28px, tall = 260px */
+.l-tile.t1 { left:0;     top:0;     width:116px; height:116px; animation-delay:.05s; }
+.l-tile.t2 { left:144px; top:0;     width:116px; height:116px; animation-delay:.20s; }
+.l-tile.t3 { left:0;     top:144px; width:116px; height:260px; animation-delay:.35s; }
+.l-tile.t4 { left:144px; top:144px; width:116px; height:116px; animation-delay:.50s; }
+.l-tile.t5 { left:288px; top:144px; width:116px; height:116px; animation-delay:.65s; }
+.l-tile.t6 { left:144px; top:288px; width:116px; height:116px; animation-delay:.80s; }
+.l-tile.t7 { left:288px; top:288px; width:116px; height:116px; animation-delay:.95s; }
+
+.l-trace {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.l-trace line {
+  stroke: rgba(255,255,255,0.16);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 16;
+  animation: l-pulse 3.2s ease-in-out infinite;
+}
+.l-mini-card {
+  position: absolute;
+  padding: 13px 16px;
+  border-radius: 17px;
+  border: 1px solid var(--lc-border);
+  background: rgba(9,9,16,0.60);
+  backdrop-filter: blur(12px);
+  color: #fff;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.32);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.l-mini-card strong { display: block; font-weight: 500; font-size: 13px; margin-bottom: 4px; }
+.l-tag {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(184,77,255,0.14);
+  color: var(--lc-mid);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+.l-mini-card.card-a { top: 38px; right: 26px; width: 192px; animation: l-drift 7s ease-in-out infinite; }
+.l-mini-card.card-b { left: 22px; bottom: 32px; width: 200px; animation: l-drift 9s ease-in-out infinite reverse; }
+
+/* ── KEYFRAMES ── */
+@keyframes l-assemble {
+  0%   { opacity:0; transform:translateY(26px) scale(.92); filter:blur(5px); }
+  100% { opacity:1; transform:translateY(0)    scale(1);   filter:blur(0);   }
+}
+@keyframes l-float { from { transform:translate3d(0,0,0); } to { transform:translate3d(0,28px,0); } }
+@keyframes l-drift { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-11px);} }
+@keyframes l-pulse { 0%,100%{opacity:.18;} 50%{opacity:.62;} }
+
+/* ── RESPONSIVE HERO ── */
+@media (max-width: 1060px) {
+  .lhero-content { grid-template-columns: 1fr; gap: 32px; }
+  .lhero-visual { min-height: 500px; order: -1; }
+  .l-panel { width: min(500px, 100%); }
+}
+@media (max-width: 640px) {
+  .lhero { padding: 90px 16px 52px; }
+  .l-logo-grid { width: 292px; height: 292px; }
+  .l-tile { border-radius: 18px; }
+  .l-tile.t1 { left:0;     top:0;     width:84px; height:84px;  }
+  .l-tile.t2 { left:104px; top:0;     width:84px; height:84px;  }
+  .l-tile.t3 { left:0;     top:104px; width:84px; height:188px; }
+  .l-tile.t4 { left:104px; top:104px; width:84px; height:84px;  }
+  .l-tile.t5 { left:208px; top:104px; width:84px; height:84px;  }
+  .l-tile.t6 { left:104px; top:208px; width:84px; height:84px;  }
+  .l-tile.t7 { left:208px; top:208px; width:84px; height:84px;  }
+  .l-mini-card { display: none; }
+}
+
+/* ════════════════════════════════
+   SHARED SECTION STYLES
+════════════════════════════════ */
+.l-sec        { padding: 96px 32px; }
+.l-sec--dark  { background: var(--lc-bg); }
+.l-sec--mid   { background: var(--lc-bg2); }
+.l-sec--alt   { background: var(--lc-bg3); }
+@media (max-width: 640px) { .l-sec { padding: 64px 18px; } }
+
+.l-container { max-width: 1180px; margin: 0 auto; }
+
+.l-label {
+  display: inline-block;
+  font-size: 11.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lc-mid);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.l-h2 {
+  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+  font-weight: 300;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  margin: 0 0 16px;
+  color: #fff;
+}
+.l-h2 em { font-style: normal; background: var(--lc-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.l-section-sub {
+  font-size: 1.04rem;
+  color: var(--lc-muted);
+  line-height: 1.74;
+  max-width: 56rem;
+  margin: 0;
+}
+.l-section-hd { margin-bottom: 52px; }
+.l-section-hd--center { text-align: center; }
+.l-section-hd--center .l-section-sub { margin: 0 auto; }
+
+/* ════════════════════════════════
+   PROBLEM SECTION
+════════════════════════════════ */
+.l-prob-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 860px) { .l-prob-grid { grid-template-columns: 1fr; } }
+
+.l-prob-card {
+  padding: 30px 26px;
+  border: 1px solid var(--lc-border);
+  border-radius: 22px;
+  background: var(--lc-panel);
+  position: relative;
+  overflow: hidden;
+  transition: border-color .2s;
+}
+.l-prob-card:hover { border-color: rgba(184,77,255,0.25); }
+.l-prob-card::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(184,77,255,0.05), transparent 55%);
+  pointer-events: none;
+}
+.l-prob-icon {
+  width: 46px; height: 46px;
+  border-radius: 13px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(184,77,255,0.11);
+  font-size: 20px;
+  color: var(--lc-mid);
+  margin-bottom: 20px;
+}
+.l-prob-card h3 { font-size: 1.05rem; font-weight: 500; margin: 0 0 10px; color: #fff; }
+.l-prob-card p  { font-size: 0.93rem; color: var(--lc-muted); line-height: 1.68; margin: 0; }
+.l-prob-card code { font-size: 12px; color: var(--lc-mid); background: rgba(184,77,255,0.1); padding: 2px 6px; border-radius: 4px; }
+
+/* ════════════════════════════════
+   UNITS SECTION
+════════════════════════════════ */
+.l-units-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 52px;
+}
+@media (max-width: 860px) { .l-units-intro { grid-template-columns: 1fr; gap: 28px; } }
+
+.l-units-body-text {
+  font-size: 0.97rem;
+  color: var(--lc-muted);
+  line-height: 1.80;
+  margin: 0;
+}
+.l-units-body-text strong { color: #fff; font-weight: 500; }
+
+.l-units-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+@media (max-width: 1040px) { .l-units-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px)  { .l-units-grid { grid-template-columns: 1fr 1fr; } }
+
+.l-unit-card {
+  padding: 28px 24px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  transition: border-color .2s, background .2s, transform .2s;
+  min-width: 0;
+}
+.l-unit-card:hover {
+  border-color: rgba(184,77,255,0.35);
+  background: rgba(184,77,255,0.09);
+  transform: translateY(-2px);
+}
+.l-unit-icon { font-size: 24px; color: var(--lc-mid); }
+.l-unit-name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  margin: 12px 0 7px;
+}
+.l-unit-desc { font-size: 14px; color: var(--lc-muted); line-height: 1.60; margin: 0; }
+.l-unit-example {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 11px;
+  color: #c4a0ff;
+  background: rgba(184,77,255,0.12);
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(184,77,255,0.18);
+}
+
+/* ════════════════════════════════
+   CODE COMPARISON
+════════════════════════════════ */
+.l-code-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 900px) { .l-code-wrap { grid-template-columns: 1fr; } }
+
+.l-code-panel {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--lc-border);
+}
+.l-code-hdr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.035);
+  border-bottom: 1px solid var(--lc-border);
+  font-size: 12px;
+  color: var(--lc-faint);
+}
+.l-dot-r { width:10px;height:10px;border-radius:50%;background:#FF5F57;flex-shrink:0; }
+.l-dot-y { width:10px;height:10px;border-radius:50%;background:#FFBD2E;flex-shrink:0; }
+.l-dot-g { width:10px;height:10px;border-radius:50%;background:#28CA41;flex-shrink:0; }
+.l-code-fn { flex:1; text-align:center; letter-spacing:0.02em; font-size:12px; }
+.l-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.l-badge--before { background:rgba(255,90,90,0.15);  color:#FF8080; }
+.l-badge--after  { background:rgba(126,231,135,0.15); color:#7EE787; }
+.l-badge--feat   { background:rgba(184,77,255,0.15);  color:var(--lc-mid); }
+
+.l-code-body {
+  background: rgba(255,255,255,0.018);
+  padding: 22px 24px;
+  overflow-x: auto;
+}
+.l-code-body pre {
+  margin: 0;
+  font-size: 15px;
+  line-height: 2;
+  color: rgba(255,255,255,0.80);
+  white-space: pre;
+  tab-size: 4;
+}
+/* syntax tokens */
+.lct-kw { color: #B84DFF; }
+.lct-fn { color: #79C0FF; }
+.lct-cl { color: #F2A7C3; }
+.lct-st { color: #A5D6FF; }
+.lct-co { color: rgba(255,255,255,0.30); font-style:italic; }
+.lct-ph { color: #89DCEB; }
+.lct-op { color: rgba(255,255,255,0.44); }
+.lct-cm { color: var(--lc-mid); }  /* class member call */
+
+.l-code-spacer { height: 20px; }
+
+/* ════════════════════════════════
+   BENEFITS
+════════════════════════════════ */
+.l-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+@media (max-width: 900px) { .l-benefits-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px)  { .l-benefits-grid { grid-template-columns: 1fr; } }
+
+.l-benefit-card {
+  padding: 32px 28px;
+  border: 1px solid var(--lc-border);
+  border-radius: 22px;
+  background: var(--lc-panel);
+  transition: border-color .2s, transform .2s;
+}
+.l-benefit-card:hover { border-color: rgba(184,77,255,0.25); transform: translateY(-2px); }
+.l-benefit-icon { font-size: 28px; color: var(--lc-mid); margin-bottom: 18px; display: block; }
+.l-benefit-card h3 { font-size: 1.06rem; font-weight: 500; color: #fff; margin: 0 0 10px; }
+.l-benefit-card p  { font-size: 0.93rem; color: var(--lc-muted); line-height: 1.68; margin: 0; }
+.l-benefit-card code { font-size: 12px; color: var(--lc-mid); background: rgba(184,77,255,0.1); padding: 2px 6px; border-radius: 4px; }
+
+/* ════════════════════════════════
+   CTA
+════════════════════════════════ */
+.l-cta-sec {
+  padding: 100px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(155deg, #190e2e 0%, #0d091e 45%, var(--lc-bg) 100%);
+}
+.l-cta-sec::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 60%, rgba(124,58,237,0.20), transparent 62%);
+  pointer-events: none;
+}
+.l-cta-sec::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+  pointer-events: none;
+}
+.l-cta-inner { position: relative; z-index: 2; max-width: 660px; margin: 0 auto; }
+.l-cta-h2 {
+  font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+  font-weight: 300;
+  letter-spacing: -0.045em;
+  line-height: 1.03;
+  margin: 0 0 18px;
+  color: #fff;
+}
+.l-cta-h2 em { font-style: normal; background: var(--lc-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.l-cta-sub { color: var(--lc-muted); font-size: 1.06rem; line-height: 1.72; margin: 0 0 34px; }
+.l-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* footer CSS lives in _custom.scss (shared with inner pages) */
+</style>
+
+<div class="l-home">
+
+<!-- ═════════════════════════════════════════
+     NAV
+════════════════════════════════════════════ -->
+<nav class="l-nav" role="navigation" aria-label="Main navigation">
+  <div class="l-nav-inner">
+    <a href="/" class="l-nav-logo" aria-label="Lucid Architecture home">
+      <svg width="26" height="26" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="nav-g" x1="32" y1="20" x2="224" y2="212" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#F49AC2"/>
+            <stop offset="35%"  stop-color="#B84DFF"/>
+            <stop offset="70%"  stop-color="#7C3AED"/>
+            <stop offset="100%" stop-color="#2E1065"/>
+          </linearGradient>
+        </defs>
+        <rect x="32"  y="20"  width="56" height="56"  rx="10" fill="url(#nav-g)"/>
+        <rect x="100" y="20"  width="56" height="56"  rx="10" fill="url(#nav-g)"/>
+        <rect x="32"  y="88"  width="56" height="124" rx="10" fill="url(#nav-g)"/>
+        <rect x="100" y="88"  width="56" height="56"  rx="10" fill="url(#nav-g)"/>
+        <rect x="168" y="88"  width="56" height="56"  rx="10" fill="url(#nav-g)"/>
+        <rect x="100" y="156" width="56" height="56"  rx="10" fill="url(#nav-g)"/>
+        <rect x="168" y="156" width="56" height="56"  rx="10" fill="url(#nav-g)"/>
+      </svg>
+      <div class="l-nav-logo-text">
+        lucid
+        <span>architecture</span>
+      </div>
+    </a>
+    <ul class="l-nav-links" role="list">
+      <li><a href="https://docs.lucidarch.site">docs</a></li>
+      <li><a href="/motive">motive</a></li>
+      <li><a href="/concept">concept</a></li>
+      <li><a href="/philosophy">philosophy</a></li>
+      <li><a href="https://github.com/lucid-architecture/lucid">source code</a></li>
+    </ul>
+    <a href="https://docs.lucidarch.site/getting-started" class="l-nav-cta">Get started</a>
+  </div>
+</nav>
+
+<!-- ═════════════════════════════════════════
+     HERO
+════════════════════════════════════════════ -->
+<section class="lhero" aria-labelledby="hero-heading">
+  <div class="lhero-grid" aria-hidden="true"></div>
+  <div class="lhero-orb one" aria-hidden="true"></div>
+  <div class="lhero-orb two" aria-hidden="true"></div>
+  <div class="lhero-content">
+
+    <!-- text side -->
+    <div>
+      <div class="l-eyebrow">
+        <span class="l-dot" aria-hidden="true"></span>
+        <span>architecture for laravel</span>
+      </div>
+      <h1 class="lhero-h1" id="hero-heading">
+        Architecture that stays<br>
+        <span class="lhero-accent">readable as you scale.</span>
+      </h1>
+      <p class="lhero-sub">
+        Lucid organizes Laravel applications into named, testable units&mdash;Features, Jobs, Operations, and Domains.
+        Every piece of logic has a single canonical location, so your team always knows where to look and exactly what to change.
+      </p>
+      <div class="lhero-cta">
+        <a class="l-btn l-btn-primary" href="https://docs.lucidarch.site/getting-started">Read the docs</a>
+        <a class="l-btn l-btn-secondary" href="https://github.com/lucid-architecture/lucid">View on GitHub</a>
+      </div>
+      <div class="lhero-units" aria-label="Lucid units">
+        <div class="lhero-unit"><span class="lhero-unit-dot" aria-hidden="true"></span>Features</div>
+        <div class="lhero-unit"><span class="lhero-unit-dot" aria-hidden="true"></span>Jobs</div>
+        <div class="lhero-unit"><span class="lhero-unit-dot" aria-hidden="true"></span>Operations</div>
+        <div class="lhero-unit"><span class="lhero-unit-dot" aria-hidden="true"></span>Domains</div>
+        <div class="lhero-unit"><span class="lhero-unit-dot" aria-hidden="true"></span>Services</div>
+      </div>
+    </div>
+
+    <!-- animated visual -->
+    <div class="lhero-visual" aria-hidden="true">
+      <div class="l-panel">
+        <div class="l-logo-stage">
+          <div class="l-logo-grid">
+            <div class="l-tile t1"></div>
+            <div class="l-tile t2"></div>
+            <div class="l-tile t3"></div>
+            <div class="l-tile t4"></div>
+            <div class="l-tile t5"></div>
+            <div class="l-tile t6"></div>
+            <div class="l-tile t7"></div>
+          </div>
+        </div>
+        <svg class="l-trace" viewBox="0 0 540 540" preserveAspectRatio="none">
+          <line x1="320" y1="145" x2="468" y2="90"></line>
+          <line x1="165" y1="388" x2="88" y2="468"></line>
+        </svg>
+        <div class="l-mini-card card-a">
+          <strong>PublishArticleFeature</strong>
+          Serves one user action. Readable at a glance.
+          <div class="l-tag">Feature</div>
+        </div>
+        <div class="l-mini-card card-b">
+          <strong>SaveArticleJob</strong>
+          One responsibility, reusable across features.
+          <div class="l-tag">Job &middot; Article domain</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+     THE PROBLEM
+════════════════════════════════════════════ -->
+<section class="l-sec l-sec--mid" aria-labelledby="problem-h">
+  <div class="l-container">
+    <div class="l-section-hd">
+      <p class="l-label">the problem</p>
+      <h2 class="l-h2" id="problem-h">Laravel is excellent.<br><em>But growth creates fog.</em></h2>
+      <p class="l-section-sub">
+        Without a structural convention, even the cleanest Laravel codebase becomes hard to navigate after a few months of team work.
+        Logic drifts into controllers, models, and ad-hoc helpers&mdash;then stays there forever.
+      </p>
+    </div>
+    <div class="l-prob-grid">
+
+      <div class="l-prob-card">
+        <div class="l-prob-icon" aria-hidden="true"><i class="ti-layout-list-thumb"></i></div>
+        <h3>Controllers that keep growing</h3>
+        <p>Validation, authorization, business logic, notifications, and redirects accumulate in controller methods. Reviewing a 400-line controller means reading every line before touching a thing.</p>
+      </div>
+
+      <div class="l-prob-card">
+        <div class="l-prob-icon" aria-hidden="true"><i class="ti-map"></i></div>
+        <h3>Logic with no canonical home</h3>
+        <p>Is it in the controller, the model, a request class, or a helper? There&rsquo;s no convention, so every codebase differs. Searching for business logic becomes an archaeology project.</p>
+      </div>
+
+      <div class="l-prob-card">
+        <div class="l-prob-icon" aria-hidden="true"><i class="ti-time"></i></div>
+        <h3>Onboarding takes months</h3>
+        <p>Every project is a snowflake. New developers spend weeks learning unwritten conventions&mdash;the same questions surfacing for every new teammate who joins the team.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+     UNITS — THE SOLUTION
+════════════════════════════════════════════ -->
+<section class="l-sec l-sec--dark" aria-labelledby="units-h">
+  <div class="l-container">
+    <div class="l-units-intro">
+      <div>
+        <p class="l-label">the solution</p>
+        <h2 class="l-h2" id="units-h">Every unit of logic<br>has a <em>name and a home.</em></h2>
+        <p class="l-section-sub">
+          Lucid introduces a small vocabulary of named units that every team member learns once and applies everywhere.
+          When you know the name of what you&rsquo;re looking for, you know exactly where to find it.
+        </p>
+      </div>
+      <div>
+        <p class="l-units-body-text">
+          Built on proven patterns&mdash;<strong>Command Bus</strong> for dispatching units of work,
+          <strong>Domain-Driven Design</strong> for organizing them by topic, and
+          <strong>Service-Oriented Architecture</strong> for separating application areas&mdash;Lucid
+          makes these patterns concrete and approachable for any Laravel developer,
+          without requiring deep expertise to apply them.
+        </p>
+      </div>
+    </div>
+
+    <div class="l-units-grid">
+      <div class="l-unit-card">
+        <i class="ti-layers l-unit-icon" aria-hidden="true"></i>
+        <p class="l-unit-name">Feature</p>
+        <p class="l-unit-desc">One class per user-facing action. Thin, readable, and composed of jobs.</p>
+        <code class="l-unit-example">PublishArticleFeature</code>
+      </div>
+      <div class="l-unit-card">
+        <i class="ti-package l-unit-icon" aria-hidden="true"></i>
+        <p class="l-unit-name">Job</p>
+        <p class="l-unit-desc">Single-responsibility. Reusable across features and operations.</p>
+        <code class="l-unit-example">SaveArticleJob</code>
+      </div>
+      <div class="l-unit-card">
+        <i class="ti-loop l-unit-icon" aria-hidden="true"></i>
+        <p class="l-unit-name">Operation</p>
+        <p class="l-unit-desc">A reusable workflow that composes jobs from multiple domains.</p>
+        <code class="l-unit-example">NotifySubscribersOperation</code>
+      </div>
+      <div class="l-unit-card">
+        <i class="ti-server l-unit-icon" aria-hidden="true"></i>
+        <p class="l-unit-name">Domain</p>
+        <p class="l-unit-desc">Topic-based grouping of jobs, models, and exceptions.</p>
+        <code class="l-unit-example">app/Domains/Article</code>
+      </div>
+      <div class="l-unit-card">
+        <i class="ti-layout-slider l-unit-icon" aria-hidden="true"></i>
+        <p class="l-unit-name">Service</p>
+        <p class="l-unit-desc">An application area (API, Web, Forum) with its own features and routes.</p>
+        <code class="l-unit-example">app/Services/Api</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+     CODE COMPARISON
+════════════════════════════════════════════ -->
+<section class="l-sec l-sec--alt" aria-labelledby="code-h">
+  <div class="l-container">
+    <div class="l-section-hd l-section-hd--center">
+      <p class="l-label">before &amp; after</p>
+      <h2 class="l-h2" id="code-h">See what changes</h2>
+      <p class="l-section-sub">
+        The controller stays permanently thin. All business logic lives in a Feature, composed from small, focused, independently testable Jobs.
+      </p>
+    </div>
+
+    <div class="l-code-wrap">
+
+      <!-- BEFORE: fat controller -->
+      <div class="l-code-panel">
+        <div class="l-code-hdr">
+          <span class="l-dot-r"></span><span class="l-dot-y"></span><span class="l-dot-g"></span>
+          <span class="l-code-fn">ArticleController.php</span>
+          <span class="l-badge l-badge--before">before</span>
+        </div>
+        <div class="l-code-body">
+<pre><span class="lct-kw">public function</span> <span class="lct-fn">store</span><span class="lct-op">(</span><span class="lct-cl">Request</span> <span class="lct-ph">$request</span><span class="lct-op">)</span>
+<span class="lct-op">{</span>
+    <span class="lct-co">// Validate input</span>
+    <span class="lct-ph">$request</span><span class="lct-op">-></span><span class="lct-fn">validate</span><span class="lct-op">([</span>
+        <span class="lct-st">'title'</span> <span class="lct-op">=></span> <span class="lct-st">'required|max:255'</span><span class="lct-op">,</span>
+        <span class="lct-st">'body'</span>  <span class="lct-op">=></span> <span class="lct-st">'required|min:100'</span><span class="lct-op">,</span>
+    <span class="lct-op">]);</span>
+
+    <span class="lct-co">// Build a unique slug</span>
+    <span class="lct-ph">$slug</span> <span class="lct-op">=</span> <span class="lct-cl">Str</span><span class="lct-op">::</span><span class="lct-fn">slug</span><span class="lct-op">(</span><span class="lct-ph">$request</span><span class="lct-op">-></span><span class="lct-ph">title</span><span class="lct-op">);</span>
+    <span class="lct-kw">if</span> <span class="lct-op">(</span><span class="lct-cl">Article</span><span class="lct-op">::</span><span class="lct-fn">where</span><span class="lct-op">(</span><span class="lct-st">'slug'</span><span class="lct-op">,</span> <span class="lct-ph">$slug</span><span class="lct-op">)-></span><span class="lct-fn">exists</span><span class="lct-op">())</span> <span class="lct-op">{</span>
+        <span class="lct-ph">$slug</span> <span class="lct-op">.=</span> <span class="lct-st">'-'</span> <span class="lct-op">.</span> <span class="lct-fn">time</span><span class="lct-op">();</span>
+    <span class="lct-op">}</span>
+
+    <span class="lct-co">// Persist the article</span>
+    <span class="lct-ph">$article</span> <span class="lct-op">=</span> <span class="lct-cl">Article</span><span class="lct-op">::</span><span class="lct-fn">create</span><span class="lct-op">([</span>
+        <span class="lct-st">'user_id'</span> <span class="lct-op">=></span> <span class="lct-cl">Auth</span><span class="lct-op">::</span><span class="lct-fn">id</span><span class="lct-op">(),</span>
+        <span class="lct-st">'title'</span>   <span class="lct-op">=></span> <span class="lct-ph">$request</span><span class="lct-op">-></span><span class="lct-ph">title</span><span class="lct-op">,</span>
+        <span class="lct-st">'slug'</span>    <span class="lct-op">=></span> <span class="lct-ph">$slug</span><span class="lct-op">,</span>
+        <span class="lct-st">'body'</span>    <span class="lct-op">=></span> <span class="lct-ph">$request</span><span class="lct-op">-></span><span class="lct-ph">body</span><span class="lct-op">,</span>
+    <span class="lct-op">]);</span>
+
+    <span class="lct-co">// Notify subscribers</span>
+    <span class="lct-cl">Notification</span><span class="lct-op">::</span><span class="lct-fn">send</span><span class="lct-op">(</span>
+        <span class="lct-cl">User</span><span class="lct-op">::</span><span class="lct-fn">whereHas</span><span class="lct-op">(</span><span class="lct-st">'subscriptions'</span><span class="lct-op">,</span>
+            <span class="lct-kw">fn</span><span class="lct-op">(</span><span class="lct-ph">$q</span><span class="lct-op">)</span> <span class="lct-op">=></span> <span class="lct-ph">$q</span><span class="lct-op">-></span><span class="lct-fn">where</span><span class="lct-op">(</span><span class="lct-st">'author_id'</span><span class="lct-op">,</span> <span class="lct-cl">Auth</span><span class="lct-op">::</span><span class="lct-fn">id</span><span class="lct-op">()))-></span><span class="lct-fn">get</span><span class="lct-op">(),</span>
+        <span class="lct-kw">new</span> <span class="lct-cl">NewArticleNotification</span><span class="lct-op">(</span><span class="lct-ph">$article</span><span class="lct-op">)</span>
+    <span class="lct-op">);</span>
+
+    <span class="lct-co">// Bust article cache</span>
+    <span class="lct-cl">Cache</span><span class="lct-op">::</span><span class="lct-fn">tags</span><span class="lct-op">([</span><span class="lct-st">'articles'</span><span class="lct-op">])-></span><span class="lct-fn">flush</span><span class="lct-op">();</span>
+
+    <span class="lct-kw">return</span> <span class="lct-fn">redirect</span><span class="lct-op">()-></span><span class="lct-fn">route</span><span class="lct-op">(</span>
+        <span class="lct-st">'articles.show'</span><span class="lct-op">,</span> <span class="lct-ph">$article</span>
+    <span class="lct-op">);</span>
+<span class="lct-op">}</span></pre>
+        </div>
+      </div>
+
+      <!-- AFTER: thin controller + Feature -->
+      <div>
+        <div class="l-code-panel">
+          <div class="l-code-hdr">
+            <span class="l-dot-r"></span><span class="l-dot-y"></span><span class="l-dot-g"></span>
+            <span class="l-code-fn">ArticleController.php</span>
+            <span class="l-badge l-badge--after">after</span>
+          </div>
+          <div class="l-code-body">
+<pre><span class="lct-kw">public function</span> <span class="lct-fn">store</span><span class="lct-op">(</span><span class="lct-cl">Request</span> <span class="lct-ph">$request</span><span class="lct-op">)</span>
+<span class="lct-op">{</span>
+    <span class="lct-kw">return</span> <span class="lct-ph">$this</span><span class="lct-op">-></span><span class="lct-fn">serve</span><span class="lct-op">(</span><span class="lct-cl">PublishArticleFeature</span><span class="lct-op">::</span><span class="lct-kw">class</span><span class="lct-op">);</span>
+<span class="lct-op">}</span></pre>
+          </div>
+        </div>
+
+        <div class="l-code-spacer"></div>
+
+        <div class="l-code-panel">
+          <div class="l-code-hdr">
+            <span class="l-dot-r"></span><span class="l-dot-y"></span><span class="l-dot-g"></span>
+            <span class="l-code-fn">PublishArticleFeature.php</span>
+            <span class="l-badge l-badge--feat">Feature</span>
+          </div>
+          <div class="l-code-body">
+<pre><span class="lct-kw">public function</span> <span class="lct-fn">handle</span><span class="lct-op">(</span><span class="lct-cl">PublishArticle</span> <span class="lct-ph">$request</span><span class="lct-op">)</span>
+<span class="lct-op">{</span>
+    <span class="lct-ph">$article</span> <span class="lct-op">=</span> <span class="lct-ph">$this</span><span class="lct-op">-></span><span class="lct-fn">run</span><span class="lct-op">(</span><span class="lct-cl">SaveArticleJob</span><span class="lct-op">::</span><span class="lct-kw">class</span><span class="lct-op">, [</span>
+        <span class="lct-st">'title'</span> <span class="lct-op">=></span> <span class="lct-ph">$request</span><span class="lct-op">-></span><span class="lct-ph">title</span><span class="lct-op">,</span>
+        <span class="lct-st">'body'</span>  <span class="lct-op">=></span> <span class="lct-ph">$request</span><span class="lct-op">-></span><span class="lct-ph">body</span><span class="lct-op">,</span>
+        <span class="lct-st">'user'</span>  <span class="lct-op">=></span> <span class="lct-cl">Auth</span><span class="lct-op">::</span><span class="lct-fn">user</span><span class="lct-op">(),</span>
+    <span class="lct-op">]);</span>
+
+    <span class="lct-ph">$this</span><span class="lct-op">-></span><span class="lct-fn">run</span><span class="lct-op">(</span><span class="lct-cl">NotifySubscribersOperation</span><span class="lct-op">::</span><span class="lct-kw">class</span><span class="lct-op">, [</span>
+        <span class="lct-st">'authorId'</span> <span class="lct-op">=></span> <span class="lct-cl">Auth</span><span class="lct-op">::</span><span class="lct-fn">id</span><span class="lct-op">(),</span>
+    <span class="lct-op">]);</span>
+
+    <span class="lct-kw">return</span> <span class="lct-ph">$this</span><span class="lct-op">-></span><span class="lct-fn">run</span><span class="lct-op">(</span><span class="lct-cl">RedirectToArticleJob</span><span class="lct-op">::</span><span class="lct-kw">class</span><span class="lct-op">, [</span>
+        <span class="lct-st">'article'</span> <span class="lct-op">=></span> <span class="lct-ph">$article</span><span class="lct-op">,</span>
+    <span class="lct-op">]);</span>
+<span class="lct-op">}</span></pre>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.l-code-wrap -->
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+     BENEFITS
+════════════════════════════════════════════ -->
+<section class="l-sec l-sec--mid" aria-labelledby="benefits-h">
+  <div class="l-container">
+    <div class="l-section-hd l-section-hd--center">
+      <p class="l-label">overhead reduced</p>
+      <h2 class="l-h2" id="benefits-h">Less friction. More flow.</h2>
+      <p class="l-section-sub">
+        Structure is not overhead&mdash;lack of structure is. Lucid pays for itself in the first code review.
+      </p>
+    </div>
+    <div class="l-benefits-grid">
+
+      <div class="l-benefit-card">
+        <i class="ti-eye l-benefit-icon" aria-hidden="true"></i>
+        <h3>Faster code reviews</h3>
+        <p>Features read like plain-English specifications. Reviewers understand intent from the Feature class, then drill into individual Jobs only when they need detail&mdash;instead of reading 400 lines end-to-end.</p>
+      </div>
+
+      <div class="l-benefit-card">
+        <i class="ti-user l-benefit-icon" aria-hidden="true"></i>
+        <h3>Shorter onboarding</h3>
+        <p>New team members learn Lucid's vocabulary once from the documentation, then apply it everywhere. No unwritten, project-specific conventions to discover over weeks of stumbling.</p>
+      </div>
+
+      <div class="l-benefit-card">
+        <i class="ti-search l-benefit-icon" aria-hidden="true"></i>
+        <h3>Instant navigation</h3>
+        <p>Looking for the code that saves a user? It&rsquo;s in <code>Domains/User/Jobs/SaveUserJob</code>. Always. The convention eliminates the mental cost of hunting for code in unfamiliar directories.</p>
+      </div>
+
+      <div class="l-benefit-card">
+        <i class="ti-target l-benefit-icon" aria-hidden="true"></i>
+        <h3>Contained blast radius</h3>
+        <p>Jobs are isolated by design. When you change a job, you know exactly where it&rsquo;s called. Tests are scoped to individual units, so failures point precisely at what broke.</p>
+      </div>
+
+      <div class="l-benefit-card">
+        <i class="ti-infinite l-benefit-icon" aria-hidden="true"></i>
+        <h3>Maximum reuse</h3>
+        <p>Jobs live in domains, not inside features. <code>SaveUserJob</code> is called from any feature that needs to save a user. Write it once, test it once, use it everywhere.</p>
+      </div>
+
+      <div class="l-benefit-card">
+        <i class="ti-bar-chart-alt l-benefit-icon" aria-hidden="true"></i>
+        <h3>Scales without rewriting</h3>
+        <p>Start with Micro for a single-purpose API. Expand to Monolith with multiple services as requirements grow. The structure adapts&mdash;no rewrite required.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════════════════════════
+     CTA
+════════════════════════════════════════════ -->
+<section class="l-cta-sec" aria-labelledby="cta-h">
+  <div class="l-cta-inner">
+    <h2 class="l-cta-h2" id="cta-h">Ready to build<br><em>with clarity?</em></h2>
+    <p class="l-cta-sub">
+      The documentation walks you through setting up Lucid in a new or existing Laravel project in minutes.
+      Micro or Monolith&mdash;your choice.
+    </p>
+    <div class="l-cta-btns">
+      <a class="l-btn l-btn-primary" href="https://docs.lucidarch.site/getting-started">Get started</a>
+      <a class="l-btn l-btn-secondary" href="https://github.com/lucid-architecture/lucid">View on GitHub</a>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.l-home -->
+{{ end }}

@@ -1,0 +1,35 @@
+<head>
+  <meta charset="utf-8">
+  <title>{{ .Title }}</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="description" content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+  {{ with site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ hugo.Generator }}
+
+  <!-- Google Fonts: Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- plugins -->
+  {{ range site.Params.plugins.css }}
+  <link rel="stylesheet" href="{{ .link | absURL }}">
+  {{ end }}
+
+  <!-- Main Stylesheet -->
+  {{ $style := resources.Get "scss/style.scss" | toCSS | minify }}
+  <link href="{{ $style.Permalink }}" rel="stylesheet" media="screen"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="{{ `images/favicon.svg` | absURL }}" type="image/svg+xml">
+  <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/png">
+
+  {{ with .Params.Image }}
+  <meta property="og:image" content="{{ . | absURL }}" />
+  {{ end }}
+  {{ template "_internal/opengraph.html" . }}
+  {{ template "_internal/google_analytics.html" . }}
+  {{ template "_internal/google_analytics_async.html" . }}
+</head>

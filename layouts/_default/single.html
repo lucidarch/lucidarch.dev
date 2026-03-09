@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+{{ if or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags")) }}
+
+{{/* ── Blog post ── */}}
+{{ partial "page-header.html" . }}
+<div class="l-inner-page">
+  <div class="l-inner-container">
+    {{ with .Params.image }}
+    <img src="{{ . | absURL }}" alt="{{ $.Title }}" class="img-fluid w-100" style="border-radius:16px; margin-bottom:40px;">
+    {{ end }}
+    <div class="content">{{ .Content }}</div>
+    {{ if site.DisqusShortname }}
+    <div class="mt-5">{{ template "_internal/disqus.html" . }}</div>
+    {{ end }}
+  </div>
+</div>
+
+{{ else }}
+
+{{/* ── Regular page ── */}}
+{{ partial "page-header.html" . }}
+<div class="l-inner-page">
+  <div class="l-inner-container">
+    <div class="content">{{ .Content }}</div>
+  </div>
+</div>
+
+{{ end }}
+
+{{ end }}

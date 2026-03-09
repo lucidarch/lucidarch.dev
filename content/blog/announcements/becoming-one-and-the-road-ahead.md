@@ -187,7 +187,7 @@ as well as Laravel updates and upgrades will be available upon release since the
     - [Lucid on Twitter](https://twitter.com/lucid_arch) & my personal account [mulkave](https://twitter.com/mulkave)
     - [Reddit](https://reddit.com/r/lucidarch) in addition to cross posts of interesting content from similar communities
 - [dev.to/lucidarch](https://dev.to/lucidarch) for knowledge sharing
-- [Slack](https://lucid-slack.herokuapp.com) to gather around the campfire
+- [Discord](https://discord.gg/j5xBhTa7) to gather around the campfire
 
 # Vision
 Finally, I would like to close by laying out the vision for Lucid's future.

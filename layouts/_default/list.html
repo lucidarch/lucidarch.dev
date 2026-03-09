@@ -1,0 +1,51 @@
+{{ define "main" }}
+
+{{ if or (or (eq .Section "post") (eq .Section "blog")) (or (eq .Section "categories") (eq .Section "tags")) }}
+
+{{/* ── Blog / tag / category listing ── */}}
+{{ partial "page-header.html" . }}
+<div class="l-inner-page">
+  <div class="l-inner-container">
+    <div class="row">
+      {{ range first 1 (where .Data.Pages "Type" "featured") }}
+      <div class="col-12 mb-5 pb-5">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="img-fluid rounded-lg w-100">
+          </div>
+          <div class="col-md-6">
+            <h2><a href="{{ .Permalink }}" class="l-post-title">{{ .Title }}</a></h2>
+            <p>{{ .Summary }}</p>
+            <a href="{{ .Permalink }}" class="l-snav-cta" style="display:inline-block; margin-top:8px;">Read More</a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+      {{ $paginator := .Paginate .Data.Pages }}
+      {{ range $paginator.Pages }}
+      <div class="col-lg-4 col-sm-6 mb-5">
+        <div class="l-blog-card">
+          <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" class="l-blog-card-img">
+          <h3><a href="{{ .Permalink }}" class="l-post-title">{{ .Title }}</a></h3>
+          <p>{{ .Summary }}</p>
+          <a href="{{ .Permalink }}" class="l-blog-more">Read More &rarr;</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ else }}
+
+{{/* ── Regular section page (motive, concept, philosophy, credits, …) ── */}}
+{{ partial "page-header.html" . }}
+<div class="l-inner-page">
+  <div class="l-inner-container">
+    <div class="content">{{ .Content }}</div>
+  </div>
+</div>
+
+{{ end }}
+
+{{ end }}
