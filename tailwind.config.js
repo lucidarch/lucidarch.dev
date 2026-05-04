@@ -1,13 +1,11 @@
 module.exports = {
-  future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
-    defaultLineHeights: true,
-    standardFontWeights: true,
-  },
+  content: [
+    "./layouts/**/*.html",
+    "./content/**/*.md",
+    "./hugo_stats.json",
+  ],
   theme: {
     extend: {},
   },
-  variants: {},
   plugins: [require("@tailwindcss/typography")],
 };

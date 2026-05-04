@@ -1,5 +1,6 @@
 /public/
 /resources/_gen/
+node_modules/
 hugo_stats.json
 hugo.exe
 hugo.darwin
