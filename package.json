@@ -23,14 +23,13 @@
   },
   "homepage": "https://github.com/janraasch/hugo-product-launch#readme",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^3.0.0",
-    "@tailwindcss/typography": "^0.2.0",
-    "autoprefixer": "^10.0.2",
-    "postcss": "^8.2.13",
-    "postcss-cli": "^8.2.0",
-    "postcss-import": "^13.0.0",
+    "@tailwindcss/typography": "^0.5.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.5.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
     "prettier": "^2.1.2",
     "prettier-plugin-go-template": "0.0.10",
-    "tailwindcss": "^1.9.6"
+    "tailwindcss": "^3.4.0"
   }
 }
